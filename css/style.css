@@ -1,0 +1,52 @@
+/*DEC6E0 - светло-пыльно-розовый
+8B7B8E - темно-пыльно-розовый
+A978B5 - приглушенный светло-фиолетовый
+6C3075 - приглушенный темно-фиолетовый
+F0F4BA - лимонный
+
+C7CFDB - серый
+89BDBF - бирюзовый
+E19AB6 - розовый
+C65278 - ярко-розовый
+964260 - темно-розовый
+486E89 - индиго
+
+e3f2fd -светло-голубой*/
+
+.navbar {
+	background-color: #DEC6E0;
+	opacity: 0.7;
+}
+
+.btn-primary{
+
+background-color: #A978B5;
+color: white;
+border: 1px solid #A978B5;
+
+}
+
+.btn-primary:hover,
+
+.btn-primary:focus,
+
+.btn-primary:visited{
+
+background-color: #6C3075;
+color: white;
+border: 1px solid #6C3075;
+}
+.p-0 {
+	padding: 0px;
+}
+.carousel-control-prev-icon, .carousel-control-next-icon {
+	width: 50px;
+	height: 50px;
+}
+.modal-header {
+	background-color: #DEC6E0;
+}
+
+h5.modal-title {
+	color: #6C3075;
+}

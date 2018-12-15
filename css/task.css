@@ -1,0 +1,39 @@
+.task_num {
+	background: url(../img/flowers_bg.jpg) center/cover;
+	padding-top: 100px;
+	padding-bottom: 20px;
+  text-align: center;
+}
+.level, .lesson, .task {
+  font-size: 50px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #964260;
+  text-shadow: 1px 1px 2px #3A1624, 0 0 1em #fff;
+}
+.level {
+  font-size: 32px;
+}
+.lesson {
+  font-size: 26px;
+}
+.task-container {
+  padding: 0px 50px 20px;
+  width: 920px;
+  background-color: #F9D7F2;
+}
+h3 {
+  padding-top: 20px;
+  padding-bottom: 10px;
+  color: #A978B5;
+}
+p {
+  color: #6C3075;
+  font-family: "Monotype Corsiva" Cursive;
+  font-style: oblique;
+}
+.res-container {
+  border: 3px dashed #fff;
+  background-color: #E2BADB;
+  display: none;
+}

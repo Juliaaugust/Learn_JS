@@ -11,25 +11,27 @@
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a href="#" class="nav-link">Главная</a>
+        <a href="/" class="nav-link">Главная</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">Информация</a>
+        <a href="/info" class="nav-link">Информация</a>
       </li>
       <li class="nav-item">
-        <a href="#" class="nav-link">Статьи</a>
+        <a href="/articles" class="nav-link">Статьи</a>
       </li>
     </ul>
 
     <form class="form-inline my-1 my-lg-0">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item">
-        <a href="#"><button class="btn btn-primary mt-1 mx-1" type="submit">Вход</button></a>
-         </li>
-         <li class="nav-item">
-        <a href="#" data-toggle="modal" data-target="#enterModal"><button class="btn btn-primary mt-1 mx-1" type="submit">Регистрация</button></a>
-         </li>
-      </ul>
+      <div class="user_nav">
+        <img src="../img/ava.jpg" alt="">
+        <div class="wrapper-dropdown" id="dd"><%= profileID %>
+          <ul class="dropdown">
+            <li><a href="/profile">Мой профиль</a></li>
+            <li><a href="/profile/settings">Настройки профиля</a></li>
+            <li><a href="/index">Выйти</a></li>
+          </ul>
+        </div>
+      </div>
     </form>
   </div>
 </nav>

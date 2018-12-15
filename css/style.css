@@ -13,6 +13,10 @@ C65278 - ярко-розовый
 
 e3f2fd -светло-голубой*/
 
+body {
+	background-color: #FFE6FA;
+}
+
 .navbar {
 	background-color: #DEC6E0;
 	opacity: 0.7;

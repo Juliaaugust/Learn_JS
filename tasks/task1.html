@@ -31,7 +31,7 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav mr-auto">
         <li class="nav-item active">
-          <a href="#" class="nav-link">Главная</a>
+          <a href="../main/index.html" class="nav-link">Главная</a>
         </li>
         <li class="nav-item">
           <a href="../main/info.html" class="nav-link">Информация</a>
@@ -63,6 +63,7 @@
       <div class="task">Задача 1</div>
     </div>
   </div>
+
   <div class="container task-container">
     <h3 class="task_header">Условие задачи: </h3>
     <p class="task_text">Создайте константу <b>weight</b>, запишите в нее вес (любое целое число, например, 50). <br>
@@ -72,14 +73,17 @@
     <h3>Решение:</h3>
     <!-- <textarea name="name" rows="8" cols="80"></textarea> -->
     <div id="codeeditor"></div>
-    <button class="btn btn-primary mt-1 mx-1" type="submit">Отправить</button>
+    <div class="row">
+      <button class="btn btn-primary mt-1 mx-1" id="check_btn" type="submit">Отправить</button>
+      <button class="btn btn-primary mt-1" type="submit">Пройти дальше</button>
+    </div>
   </div>
+
   <div class="container task-container res-container">
     <h3 class="task_header">Результат решения: </h3>
     <p>Решение абсолютно верное</p>
   </div>
-  <script type="text/javascript">
-    var editor = CodeMirror(document.getElementById('codeeditor'));
-  </script>
+
+  <script type="text/javascript" src="../js/check_task_1.js"></script>
 </body>
 </html>

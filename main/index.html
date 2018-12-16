@@ -39,10 +39,10 @@
         <form class="form-inline my-1 my-lg-0">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item">
-            <a href="#"><button class="btn btn-primary mt-1 mx-1" type="submit">Вход</button></a>
+            <a href="#" data-toggle="modal" data-target="#enterModal"><button class="btn btn-primary mt-1 mx-1" type="submit">Вход</button></a>
              </li>
              <li class="nav-item">
-            <a href="#" data-toggle="modal" data-target="#enterModal"><button class="btn btn-primary mt-1 mx-1" type="submit">Регистрация</button></a>
+            <a href="#" data-toggle="modal" data-target="#registModal"><button class="btn btn-primary mt-1 mx-1" type="submit">Регистрация</button></a>
              </li>
           </ul>
         </form>
@@ -82,7 +82,43 @@
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="enterModalLabel">Регистрация</h5>
+            <h5 class="modal-title" id="enterModalLabel">Вход</h5>
+            <button class="close" type="button" data-dismiss="modal" area-label="Close">
+              <span area-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div class="container-fluid">
+              <form method="post" action="/profile/profile.html">
+                <div class="form-group">
+                  <label for="inputEmail">Email адрес: </label>
+                  <input type="email" class="form-control" id="inputEmail" aria-describdby="emailHelp" placeholder="Ваш Email" name="email" required>
+                  <small id="emailHelp" class="form-text text-muted">Email пользователя, зарегистрированного в системе</small>
+                </div>
+                <div class="form-group">
+                  <label for="inputPass">Пароль: </label>
+                  <input type="password" class="form-control" id="inputPass" placeholder="Пароль" name="password" required>
+                  <small id="passHelp" class="form-text text-muted">Пароль пользователя, зарегистрированного в системе</small>
+                </div>
+                <div class="form-check">
+                  <label class="form-check-label">
+                    <input type="checkbox" class="form-check-input" name="check">
+                    Запомнить меня
+                  </label>
+                </div>
+                <button type="submit" class="btn btn-primary mt-2">Войти</button>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="registModal" tabindex="-1" role="dialog" aria-labelledby="registModal" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="registModalLabel">Регистрация</h5>
             <button class="close" type="button" data-dismiss="modal" area-label="Close">
               <span area-hidden="true">&times;</span>
             </button>
@@ -102,7 +138,7 @@
                 </div>
                 <div class="form-group">
                   <label for="inputPass">Пароль: </label>
-                  <input type="passwirs" class="form-control" id="inputPass" placeholder="Придумайте пароль" name="password" required>
+                  <input type="password" class="form-control" id="inputPass" placeholder="Придумайте пароль" name="password" required>
                   <small id="passHelp" class="form-text text-muted">Пароль должен содержать не менее 5 символов</small>
                 </div>
                 <div class="form-check">
@@ -111,7 +147,7 @@
                     Запомнить меня
                   </label>
                 </div>
-                <button type="submit" class="btn btn-primary">Отправить</button>
+                <button type="submit" class="btn btn-primary mt-2">Отправить</button>
               </form>
             </div>
           </div>

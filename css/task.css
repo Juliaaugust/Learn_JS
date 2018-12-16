@@ -35,5 +35,10 @@ p {
 .res-container {
   border: 3px dashed #fff;
   background-color: #E2BADB;
-  display: none;
+  display: block;
+}
+#codeeditor {
+	border: 2px solid #A978B5;
+	border-radius: 3px;
+	margin-bottom: 10px;
 }

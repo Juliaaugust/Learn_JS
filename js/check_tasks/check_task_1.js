@@ -5,6 +5,8 @@ var editor = CodeMirror(document.getElementById('codeeditor'), {
   lineNumbers: true
 });
 
+var res_text = document.getElementsByClassName("res_text")[0];
+
 check_btn.onclick = function(){
     // получаем код
     var user_code = editor.getValue();
@@ -13,6 +15,7 @@ check_btn.onclick = function(){
   		eval(user_code);
   	} catch (e){
   		console.log("Неккоректный JS код\n" + e.toString());
+      res_text.innerHTML = "Ошибка!<br>Неккоректный JS код";
   		return;
   	}
   	// Проверка наличия функции
@@ -24,16 +27,22 @@ check_btn.onclick = function(){
 
         if (energy === weight * (Math.pow(c, 2))) {
           console.log("Все правильно!");
+          res_text.innerHTML = "Молодец!<br>Ваше решение абсолютно верное!";
+
         } else {
           console.log("Переменная 'energy' НЕкорректна");
+          res_text.innerHTML = "Ошибка!<br>Переменная 'energy' НЕкорректна";
         }
 
       } else {
         console.log("Переменная 'c' НЕкорректна");
+        res_text.innerHTML = "Ошибка!<br>Переменная 'c' НЕкорректна";
       }
   	} else {
       console.log("Переменная 'weight' НЕкорректна");
+      res_text.innerHTML = "Ошибка!<br>Переменная 'weight' НЕкорректна";
     }
     var res = document.getElementsByClassName("res-container")[0];
     res.style.display="block";
+    window.scrollY += 100;
 }

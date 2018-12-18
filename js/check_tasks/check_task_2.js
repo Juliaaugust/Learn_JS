@@ -25,7 +25,7 @@ check_btn.onclick = function(){
       if (triangle === square + 12) {
         console.log("Переменная 'triangle' корректна");
 
-        if (circle === (square + triangle)*3) {
+        if (circle === (square + triangle) * 3) {
           console.log("Переменная 'circle' корректна");
 
 

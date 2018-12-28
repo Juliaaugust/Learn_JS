@@ -17,9 +17,20 @@
 <body>
   <% include blocks/header_user.ejs %>
   <div class="welcome">
-    <p><b>Текущий уровень: </b><%= info.curr_level %></p>
-    <p><b>Решено задач: </b><%= info.solved_tasks %></p>
-    <p><b>Опубликовано статей: </b><%= info.publ_articles %></p>
+    <div class="container">
+      <div class="row">
+        <div class="col-md"><p><b>Текущий уровень: </b><%= info.curr_level %></p></div>
+        <div class="col-md"><button class="btn btn-success w-100" type="submit"><img src="../img/task_ico.png" alt=""> К тестам</button></div>
+      </div>
+      <div class="row">
+        <div class="col-md"><p><b>Решено задач: </b><%= info.solved_tasks %></p></div>
+        <div class="col-md"><button class="btn btn-success w-100" type="submit"><img src="../img/lesson_ico.png" alt=""> К урокам</button></div>
+      </div>
+      <div class="row">
+        <div class="col-md"><p><b>Опубликовано статей: </b><%= info.publ_articles %></p></div>
+        <div class="col-md"><button class="btn btn-success w-100" type="submit"><img src="../img/article_ico.png" alt=""> К статьям</button></div>
+      </div>
+    </div>
   </div>
 
   <!-- Optional JavaScript -->

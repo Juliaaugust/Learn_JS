@@ -150,3 +150,11 @@
 .user_nav li a:hover {
 	background-color: #D2A2DD;
 }
+
+.welcome {
+	font-size: 26px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #964260;
+  text-shadow: 1px 1px 2px #3A1624, 0 0 1em #fff;
+}

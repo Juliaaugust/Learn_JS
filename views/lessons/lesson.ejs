@@ -4,34 +4,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-  <link rel="stylesheet" href="../../css/task.css">
+    <link rel="stylesheet" href="../../css/bootstrap.min.css">
+  <link rel="stylesheet" href="../../css/task_lesson.css">
   <link rel="stylesheet" href="../../css/style.css">
   <link rel="stylesheet" href="../../css/profile.css">
 
   <script src="../../js/jquery.js"></script>
   <script src="../../js/profile.js"></script>
 
-  <title>Урок 1</title>
+  <title>Уровень 1 | Урок <%= lessonNum %></title>
 </head>
 <body>
 
 <% include ../blocks/header_user.ejs %>
 
-  <div class="container-fluid task_num">
+  <div class="container-fluid lesson_num">
     <div class="container">
       <div class="level">Уровень 1</div>
       <div class="lesson">Урок <%= lessonNum %></div>
     </div>
   </div>
 
-  <div class="container task-container">
-    <h3 class="task_header">Математика и константы </h3>
-    <p class="task_text">Создайте переменную <b>weight</b> и запишите в нее ваш вес (любое число, например, 50). <br>
-    Создайте переменную <b>c</b>, запишите в нее значение скорости света в вакууме в метрах в секунду: 300000000. <br>
-    Вычислите значение энергии тела (вес которого равен значению weight) с помощью знаменитой формулы <b>E=mc<sup>2</sup></b>, где m — это вес (weight), а c – это скорость света. <br>
-    Запишите значение в переменную <b>energy</b>.</p>
-    <h3>Решение:</h3>
+  <div class="container main-container">
+    <h3 class="header">Введение в программирование. Основные понятия</h3>
+    <p class="main_text">Начнем с самых основ программирования. Для начала стоит четко для себя понять,
+      что же такое компьютер, ведь это то устройство, без которого программирования бы и не существовало.
+      Итак, основные вещи, которые нужно понять:</p>
+      <ul class="main_text">
+        <li>Компьютер принимает код и выполняет действия</li>
+        <li>Компьютер понимает определённый язык кодов:
+          <ul>
+            <li>Некоторые коды работают</li>
+            <li>Некоторые коды не работают</li>
+            <li>В коде жесткие правила</li>
+          </ul>
+        </li>
+        <li>Компьютеры по существу не такие умные, как люди, они только выполняют наши указания. А указания для компьютеров выражаются в виде кода</li>
+        <li>Все компьютеры фундаментально одинаковы. Примитивный, старый, маломощный компьютер и современный ноутбук используют одинаковые принципы и способны на одинаковые операции, в разной степени.</li>
+      </ul>
+    <p class="main_text">Теперь поговорим о языках программирования. У языка программирования есть два аспекта:</p>
+    <ul class="main_text">
+      <li>Синтаксис (правила написания кода, правописание, порядок слов)</li>
+      <li>Семантика (идея, смысловая нагрузка или назначение)</li>
+    </ul>
+    <p class="main_text">Некоторые языки программирования имеют похожий синтаксис.
+      Некоторые языки имеют экзотический, необычный синтаксис. Например, такой язык как Piet
+      имеет код в форме абстрактного рисунка</p>
+      <figure class="fig">
+        <img src="../../img/lesson/HW_Piet.png" alt="" style="width:30%" class="img">
+        <figcaption>“Hello World” на языке Piet</figcaption>
+      </figure>
+    <p class="main_text">Семантику языка сложно увидеть, поскольку она неявная.</p>
+    <p class="main_text"><b>Синтаксис и семантика. </b>Принципы, которые необходимо знать:</p>
+    <ul class="main_text">
+      <li>В современных языках хороший код означает легко понятную семантику</li>
+      <li>Если понять то, что делает код сложно, то код не слишком хороший</li>
+      <li>Синтаксис легко изучать</li>
+      <li>Синтаксис необходимо знать, но этого недостаточно</li>
+    </ul>
+    <p class="main_text">Выбор языка – это не «один раз и на всю жизнь», поэтому не так важно с какого языка начинать.
+      Вы будете переключаться на разные языки и использовать несколько языков и технологий одновременно.
+      Такова реальность современного программирования.</p>
+    <p class="main_text">Данный курс предназначен для бучения языку JavaScript, потому что он простой, очень популярный и работает почти везде.
+      JavaScript обычно используется для написания веб-сайтов, мобильных приложений, программного обеспечения для серверов и многого другого.
+      Этот сайт в эту самую секунду использует JavaScript.
+      Программы, написанные на JavaScript, запущены сейчас на ваших компьютерах.
+      В следующем уроке мы подробнее остановимся на языке JavaScript и напишем на нем первую программу.</p>
+      <div class="row">
+        <button class="btn btn-primary mt-1" type="submit">Пройти дальше</button>
+      </div>
   </div>
 
 </body>

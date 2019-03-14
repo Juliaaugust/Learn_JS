@@ -12,24 +12,44 @@
 
   <script src="../js/jquery.js"></script>
   <script src="../js/profile.js"></script>
-  <title>Профиль</title>
+  <title>Настройки профиля</title>
 </head>
 <body>
   <% include ./blocks/header_user.ejs %>
   <div class="welcome">
     <div class="container">
-      <div class="row">
-        <div class="col-md"><p><b>Текущий уровень: </b><%= info.curr_level %></p></div>
-        <div class="col-md"><button class="btn btn-success w-100" type="submit"><img src="../img/task_ico.png" alt=""> К тестам</button></div>
-      </div>
-      <div class="row">
-        <div class="col-md"><p><b>Решено задач: </b><%= info.solved_tasks %></p></div>
-        <div class="col-md"><button class="btn btn-success w-100" type="submit"><img src="../img/lesson_ico.png" alt=""> К урокам</button></div>
-      </div>
-      <div class="row">
-        <div class="col-md"><p><b>Опубликовано статей: </b><%= info.publ_articles %></p></div>
-        <div class="col-md"><button class="btn btn-success w-100" type="submit"><img src="../img/article_ico.png" alt=""> К статьям</button></div>
-      </div>
+      <h1>Редактирование профиля</h1>
+    </div>
+  </div>
+
+  <div class="container main-container">
+    <h4>Ваше имя: </h4>
+    <h4>Фамилия </h4>
+    <h4>Номер группы: </h4>
+
+    <br/>
+
+    <h4>Язык </h4>
+
+    <br/>
+
+    <h4>Фото профиля </h4>
+
+    <br/>
+
+    <h4>Изменение пароля</h4>
+    <h6>Старый пароль</h6>
+    <h6>Новый пароль</h6>
+    <h6>Новый пароль (ещё раз)</h6>
+
+    <br/>
+
+    <h4>Изменение логина</h4>
+    <h6>Текущий почтовый адрес</h6>
+    <h6>Новая почта</h6>
+
+    <div class="row">
+      <button class="btn btn-primary mt-1 mx-1" id="save_settings" type="submit">Сохранить изменения</button>
     </div>
   </div>
 

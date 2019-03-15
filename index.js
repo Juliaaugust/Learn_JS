@@ -51,20 +51,6 @@ app.get('/lesson/:num', function (req, res) {
 });
 
 app.post('/registration', function (req, res) {
-  // console.dir(req.body);
-  // let data = {
-  //   name: req.body.name,
-  //   surname: req.body.surname,
-  //   info: {
-  //     level: 1
-  //   }
-  // };
-
-  // let name = req.body.name;
-  // let surname = req.body.surname;
-  // let group = req.body.group;
-  // let email = req.body.email;
-  // let password = req.body.password;
 
   let user = {
     name: req.body.name,
@@ -77,8 +63,22 @@ app.post('/registration', function (req, res) {
   var query = db.query('INSERT INTO users SET ?', user, function(err, result) {
     console.log(err);
     console.log(result);
+    // var userId = result.insertId;
   });
 
+  res.redirect('/profile') ;
+});
+
+app.post('/authorization', function (req, res) {
+
+  let user = {
+    email: req.body.email,
+    password: req.body.password
+  }
+
+  var query = db.query('SELECT * FROM users', function(error, result, fields){
+    console.log(result.email);
+  });
   res.redirect('/profile') ;
 });
 

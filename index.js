@@ -63,10 +63,9 @@ app.post('/registration', function (req, res) {
   var query = db.query('INSERT INTO users SET ?', user, function(err, result) {
     console.log(err);
     console.log(result);
-    // var userId = result.insertId;
+    res.redirect('/profile/' + result.insertId);
   });
 
-  res.redirect('/profile') ;
 });
 
 app.post('/authorization', function (req, res) {
@@ -76,10 +75,18 @@ app.post('/authorization', function (req, res) {
     password: req.body.password
   }
 
-  var query = db.query('SELECT * FROM users', function(error, result, fields){
-    console.log(result.email);
+  var query = db.query("SELECT * FROM users WHERE email = '" + req.body.email + "' AND password = '" + req.body.password + "'", function(error, result, fields){
+    if (error) throw error;
+    if(result.length == 0) { // 0 – запись в БД не найдена
+      console.log("Неверный логин или пароль");
+      // res.redirect('/authorization/error');
+    } else {
+      console.log(result[0].email);
+      console.log(result.length);
+
+      res.redirect('/profile/' + result[0].id_user);
+    }
   });
-  res.redirect('/profile') ;
 });
 
 // прописать отдельные получения кода (асинхронно отправляется код) POST

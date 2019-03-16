@@ -2,6 +2,11 @@
 	background: url(../img/flowers_bg.jpg) center/cover;
 	padding-top: 100px;
 	padding-bottom: 20px;
+	font-size: 26px;
+	text-transform: uppercase;
+	font-weight: bold;
+	color: #964260;
+  text-shadow: 1px 1px 2px #3A1624, 0 0 1em #fff;
 }
 
 .welcome::after {
@@ -151,10 +156,15 @@
 	background-color: #D2A2DD;
 }
 
-.welcome {
-	font-size: 26px;
-	text-transform: uppercase;
-	font-weight: bold;
-	color: #964260;
-  text-shadow: 1px 1px 2px #3A1624, 0 0 1em #fff;
+.main-container {
+  padding: 20px 50px 20px;
+  width: 920px;
+  background-color: #F9D7F2;
+	font-size: 22px;
+}
+.err {
+	text-align: center;
+	font-size: 40px;
+	padding-top: 30px;
+	padding-bottom: 30px;
 }

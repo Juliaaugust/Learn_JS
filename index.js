@@ -30,16 +30,19 @@ app.get('/', function (req, res) {
 });
 
 app.get('/profile', function (req, res) {
-
   res.render('profile', {profileID: req.params.id, info: info});
-});
-
-app.get('/profile/settings', function (req, res) {
-  res.render('profile_settings', {profileID: req.params.id, info: info});
 });
 
 app.get('/profile/:id', function (req, res) {
   res.render('profile', {profileID: req.params.id, info: info});
+});
+
+app.get('/authorization/error', function (req, res) {
+  res.render('profile_err');
+});
+
+app.get('/profile/settings', function (req, res) {
+  res.render('profile_settings', {profileID: req.params.id, info: info});
 });
 
 app.get('/task/:num', function (req, res) {
@@ -65,7 +68,6 @@ app.post('/registration', function (req, res) {
     console.log(result);
     res.redirect('/profile/' + result.insertId);
   });
-
 });
 
 app.post('/authorization', function (req, res) {
@@ -79,7 +81,7 @@ app.post('/authorization', function (req, res) {
     if (error) throw error;
     if(result.length == 0) { // 0 – запись в БД не найдена
       console.log("Неверный логин или пароль");
-      // res.redirect('/authorization/error');
+      res.redirect('/authorization/error');
     } else {
       console.log(result[0].email);
       console.log(result.length);

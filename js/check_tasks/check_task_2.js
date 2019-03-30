@@ -18,39 +18,48 @@ check_btn.onclick = function(){
       res_text.innerHTML = "Ошибка!<br>Неккоректный JS код";
   		return;
   	}
-  	// Проверка наличия функции
-  	if(square === 5){
-  		console.log("Переменная 'square' корректна");
 
-      if (triangle === square + 12) {
-        console.log("Переменная 'triangle' корректна");
+    // проверка существования переменных и соотвествия их типу number
+    if(typeof(square) === "number" && typeof(triangle) === "number" && typeof(circle) === "number" && typeof(figure) === "number") {
+      console.log("Переменные заданы корректно");
+      if(square === 5){
+    		console.log("Переменная 'square' корректна");
 
-        if (circle === (square + triangle) * 3) {
-          console.log("Переменная 'circle' корректна");
+        if (triangle === square + 12) {
+          console.log("Переменная 'triangle' корректна");
+
+          if (circle === (square + triangle) * 3) {
+            console.log("Переменная 'circle' корректна");
 
 
-          if (figure === square + triangle + circle) {
-            console.log("Все правильно!");
-            res_text.innerHTML = "Молодец!<br>Ваше решение абсолютно верное!";
+            if (figure === square + triangle + circle) {
+              console.log("Все правильно!");
+              res_text.innerHTML = "Молодец!<br>Ваше решение абсолютно верное!";
+
+            } else {
+              console.log("Переменная 'figure' НЕкорректна");
+              res_text.innerHTML = "Ошибка!<br>Переменная 'figure' НЕкорректна";
+            }
 
           } else {
-            console.log("Переменная 'figure' НЕкорректна");
-            res_text.innerHTML = "Ошибка!<br>Переменная 'figure' НЕкорректна";
+            console.log("Переменная 'circle' НЕкорректна");
+            res_text.innerHTML = "Ошибка!<br>Переменная 'circle' НЕкорректна";
           }
 
         } else {
-          console.log("Переменная 'circle' НЕкорректна");
-          res_text.innerHTML = "Ошибка!<br>Переменная 'circle' НЕкорректна";
+          console.log("Переменная 'triangle' НЕкорректна");
+          res_text.innerHTML = "Ошибка!<br>Переменная 'triangle' НЕкорректна";
         }
-
-      } else {
-        console.log("Переменная 'triangle' НЕкорректна");
-        res_text.innerHTML = "Ошибка!<br>Переменная 'triangle' НЕкорректна";
+    	} else {
+        console.log("Переменная 'square' НЕкорректна");
+        res_text.innerHTML = "Ошибка!<br>Переменная 'square' НЕкорректна";
       }
-  	} else {
-      console.log("Переменная 'square' НЕкорректна");
-      res_text.innerHTML = "Ошибка!<br>Переменная 'square' НЕкорректна";
     }
+    else {
+      console.log("Ошибка в объявлении переменных!");
+      res_text.innerHTML = "Ошибка!<br>Проверьте правильность написания переменных и/или соответствие их числовому типу.";
+    }
+
     var res = document.getElementsByClassName("res-container")[0];
     res.style.display="block";
     window.scrollY += 100;

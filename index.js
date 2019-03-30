@@ -23,7 +23,7 @@ app.use('/js', express.static('js'));
 app.use('/lib', express.static('lib'));
 app.use('/mode', express.static('mode'));
 
-var info = {curr_level: "2", solved_tasks: "5", publ_articles: "0"};
+var info = {curr_level: "1", solved_tasks: "0", publ_articles: "0"};
 
 app.get('/', function (req, res) {
   res.render('main/main');
@@ -45,8 +45,12 @@ app.get('/profile/settings', function (req, res) {
   res.render('profile_settings', {profileID: req.params.id, info: info});
 });
 
+app.get('/admin', function (req, res) {
+  res.render('admin/admin_profile', {profileID: req.params.id, info: info});
+});
+
 app.get('/task/:num', function (req, res) {
-  res.render('tasks/task', {profileID: req.params.id, taskNum: req.params.num});
+  res.render('tasks/task2', {profileID: req.params.id, taskNum: req.params.num});
 });
 
 app.get('/lesson/:num', function (req, res) {

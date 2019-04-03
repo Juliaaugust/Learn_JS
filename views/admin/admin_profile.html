@@ -27,7 +27,7 @@
         <img src="../../img/logo.png" alt="LearnJS">
       </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-        
+
         <div class="collapse navbar-collapse" id="navbarContent">
           <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
@@ -55,19 +55,16 @@
 
       <div class="list-group list-group-flush">
         <a href="#" class="list-group-item waves-effect">
+          <i class="fa fa-user mr-3"></i>Мой профиль
+        </a>
+        <a href="#" class="list-group-item waves-effect">
           <i class="fa fa-pie-chart mr-3"></i>Панель инструментов
         </a>
         <a href="#" class="list-group-item waves-effect">
-          <i class="fa fa-user mr-3"></i>Профиль
+          <i class="fa fa-table mr-3"></i>Таблицы пользователей
         </a>
         <a href="#" class="list-group-item waves-effect">
-          <i class="fa fa-table mr-3"></i>Таблицы
-        </a>
-        <a href="#" class="list-group-item waves-effect">
-          <i class="fa fa-map mr-3"></i>Карты
-        </a>
-        <a href="#" class="list-group-item waves-effect">
-          <i class="fa fa-money mr-3"></i>Заказы
+          <i class="fa fa-map mr-3"></i>Планы заданий
         </a>
 
       </div>
@@ -204,7 +201,7 @@
     </div>
   </main>
 
-  
+
 
   <!-- SCRIPTS -->
   <!-- JQuery -->
@@ -223,9 +220,9 @@
     var myChart = new Chart(ctx, {
       type: "bar",
       data: {
-        labels: ["Значение 1", "Значение 2", "Значение 3", "Значение 4", "Значение 5", "Значение 6"],
+        labels: ["Уровень 1", "Уровень 2", "Уровень 3", "Уровень 4", "Уровень 5", "Уровень 6"],
         datasets: [{
-          label: "Основные показатели прибыли",
+          label: "Количество добавленных задач",
           data: [15, 18, 32, 24, 13, 11], // данные графика
           backgroundColor: ["Tomato", "orange", "Khaki", "SpringGreen", "DodgerBlue", "violet"],
           borderColor: ["red", "DarkOrange", "Gold", "MediumSeaGreen", "blue", "magenta"],

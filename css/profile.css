@@ -11,7 +11,7 @@
 
 .welcome::after {
 	content: '';
-	position: absolute;
+	/* position: absolute; */
 	top: 0;
 	left: 0;
 	width: 100%;
@@ -167,4 +167,10 @@
 	font-size: 40px;
 	padding-top: 30px;
 	padding-bottom: 30px;
+}
+.col-md > .btn.btn-success.w-100 {
+	background-color: #96425fc0;
+}
+.col-md > .btn.btn-success.w-100:hover {
+	background-color: #aa5673ab;
 }

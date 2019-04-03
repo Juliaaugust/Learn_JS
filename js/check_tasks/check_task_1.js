@@ -44,5 +44,16 @@ check_btn.onclick = function(){
     }
     var res = document.getElementsByClassName("res-container")[0];
     res.style.display="block";
-    window.scrollY += 100;
+    
+    // скроллинг страницы вниз к блоку с результатом
+    $("a.res_a").click(function () {
+        var elementClick = $(this).attr("href");
+        var destination = $(elementClick).offset().top;
+        if ($.browser.safari) {
+            $('body').animate({ scrollTop: destination }, 1100); //1100 - скорость
+        } else {
+            $('html').animate({ scrollTop: destination }, 1100);
+        }
+        return false;
+    });
 }

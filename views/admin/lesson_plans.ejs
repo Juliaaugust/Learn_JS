@@ -64,17 +64,17 @@
       </a>
 
       <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item waves-effect">
+        <a href="/admin" class="list-group-item waves-effect">
           <i class="fa fa-user mr-3"></i>Мой профиль
         </a>
-        <a href="#" class="list-group-item waves-effect">
+        <a href="/toolbar" class="list-group-item waves-effect">
           <i class="fa fa-pie-chart mr-3"></i>Панель инструментов
         </a>
-        <a href="#" class="list-group-item waves-effect">
+        <a href="/table_users" class="list-group-item waves-effect">
           <i class="fa fa-table mr-3"></i>Таблицы пользователей
         </a>
-        <a href="#" class="list-group-item waves-effect">
-          <i class="fa fa-map mr-3"></i>Планы заданий
+        <a href="/lesson_plans" class="list-group-item waves-effect active">
+          <i class="fa fa-map mr-3"></i>Планы уроков
         </a>
 
       </div>
@@ -82,24 +82,8 @@
   </header>
 
   <main class="pt-5 mx-lg-5">
-    <div class="container-fluid mt-5">
-      <div class="card mb-4 wow fadeIn">
-        <div class="card-body d-sm-flex justify-content-between">
-          <h4 class="mb-2 mb-sm-0 pt-1">
-            <a href="#">Домашняя страница</a>
-            <span> / </span>
-            <span>Панель инструментов
-            </span>
-          </h4>
 
-          <form class="d-flex justify-content-center">
-            <input type="search" class="form-control" placeholder="Введите ваш запрос">
-            <button class="btn btn-primary btn-sm my-0 p" type="submit"><i class="fa fa-search"></i></button>
-          </form>
-        </div>
-      </div>
-    </div>
-    <div class="row wow fadeIn">
+    <div class="row wow fadeIn mt-5">
       <div class="col-md-9 mb-4">
         <div class="card">
           <div class="card-body">
@@ -109,8 +93,8 @@
       </div>
       <div class="col-md-3 mb-4">
           <div class="card mb-2">
-            <div class="card-body">
-              <canvas id="pieChart"></canvas>
+            <div class="card-body pieCh">
+              <canvas class="pieCanv" id="pieChart"></canvas>
             </div>
           </div>
           <div class="card mb-4">
@@ -211,8 +195,6 @@
     </div>
   </main>
 
-
-
   <!-- SCRIPTS -->
   <!-- JQuery -->
   <script type="text/javascript" src="../../js/jquery-3.3.1.min.js"></script>
@@ -226,6 +208,8 @@
     new WOW().init();
   </script>
   <script type="text/javascript" src="../../js/admin_profile.js">
+
+  </script>
 </body>
 
 </html>

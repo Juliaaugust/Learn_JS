@@ -38,3 +38,12 @@ thead, tbody tr {
     width:100%;
     table-layout:fixed;
 }
+.exit-btn {
+    padding: 10px 30px;
+    background: #E19AB6;
+    color: #fff;
+    border-radius: 10px;
+}
+.pieCh {
+  height: 285px;
+}

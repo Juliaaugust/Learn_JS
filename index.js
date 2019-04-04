@@ -41,12 +41,24 @@ app.get('/authorization/error', function (req, res) {
   res.render('profile_err');
 });
 
-app.get('/profile/settings', function (req, res) {
+app.get('/profile_settings', function (req, res) {
   res.render('profile_settings', {profileID: req.params.id, info: info});
 });
 
 app.get('/admin', function (req, res) {
   res.render('admin/admin_profile', {profileID: req.params.id, info: info});
+});
+
+app.get('/toolbar', function (req, res) {
+  res.render('admin/admin_toolbar', {profileID: req.params.id, info: info});
+});
+
+app.get('/table_users', function (req, res) {
+  res.render('admin/table_users', {profileID: req.params.id, info: info});
+});
+
+app.get('/lesson_plans', function (req, res) {
+  res.render('admin/lesson_plans', {profileID: req.params.id, info: info});
 });
 
 app.get('/task/:num', function (req, res) {

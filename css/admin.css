@@ -28,7 +28,7 @@
     }
 }
 
-tbody {
+.min-user-table > tbody {
     display:block;
     max-height:200px;
     overflow-y:auto;
@@ -44,6 +44,13 @@ thead, tbody tr {
     color: #fff;
     border-radius: 10px;
 }
-.pieCh {
-  height: 285px;
+.btn-about-user {
+  background-color: #C7CFDB;
+}
+
+.adm-data > h2,
+.adm-features > h2 {
+  color: #6C3075;
+  font-family: "Monotype Corsiva" Cursive;
+  font-style: oblique;
 }

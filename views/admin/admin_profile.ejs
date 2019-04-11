@@ -82,23 +82,34 @@
 
   <main class="pt-5 mx-lg-5">
 
-  <h3>Мои данные</h3>
-  <ul>
-    <li>Имя</li>
-    <li>Фамилия</li>
-    <li>Логин (e-mail)</li>
-    <li>Пароль</li>
-    <li></li>
-  </ul>
+  <div class="row wow fadeIn mt-5">
 
-  <h3>Мои возможности</h3>
-  <ul>
-    <li>Просмотр основных параметров</li>
-    <li></li>
-    <li></li>
-    <li></li>
-    <li></li>
-  </ul>
+    <div class="col-md-6 mb-4 adm-data">
+      <h2>Мои данные</h2>
+        <h4>Имя: <input type="text" name="name" value="Юлия"></h4>
+        <h4>Фамилия: <input type="text" name="surname" value="Гульцева"></h4>
+        <br/>
+        <h4>Изменение логина</h4>
+        <h6>Текущий почтовый адрес <input type="email" name="oldEmail" value="juliaaugut96@gmail.com"></h6>
+        <h6>Новая почта <input type="email" name="newEmail" value=""></h6>
+        <br/>
+        <h4>Изменение пароля</h4>
+        <h6>Старый пароль <input type="password" name="oldPass" value=""></h6>
+        <h6>Новый пароль <input type="password" name="newPass" value=""></h6>
+        <h6>Новый пароль (ещё раз) <input type="password" name="newPass" value=""></h6>
+    </div>
+
+    <div class="col-md-6 mb-4 adm-features">
+      <h2>Мои возможности</h2>
+      <ul>
+        <li><a href="#">Просмотр основных параметров</a></li>
+        <li><a href="#">Просмотр и редактирование данных пользователей системы</a></li>
+        <li><a href="#">Просмотр и редактирование плана обучения</a></li>
+        <li><a href="#">Просмотр и редактирование задач в составе системы</a></li>
+        <li><a href="#">Просмотр и редактирование тестов для задач</a></li>
+      </ul>
+    </div>
+  </div>
   </main>
 
   <!-- SCRIPTS -->
@@ -112,9 +123,6 @@
   <script type="text/javascript" src="../../js/mdb.js"></script>
   <script>
     new WOW().init();
-  </script>
-  <script type="text/javascript" src="../../js/admin_profile.js">
-
   </script>
 </body>
 

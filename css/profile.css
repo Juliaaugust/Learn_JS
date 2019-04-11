@@ -174,3 +174,28 @@
 .col-md > .btn.btn-success.w-100:hover {
 	background-color: #aa5673ab;
 }
+
+.main-container > h4, h6 {
+  color: #6C3075;
+  font-family: "Monotype Corsiva" Cursive;
+  font-style: oblique;
+}
+.lang > span {
+	color: #6C3075;
+  font-family: "Monotype Corsiva" Cursive;
+  font-style: oblique;
+	font-size: 27px;
+}
+
+.main-container > h4 > input,
+.main-container > h6 > input,
+.lang > .langInput {
+	float: right;
+  color: #6C3075;
+  font-family: "Monotype Corsiva" Cursive;
+  font-style: oblique;
+	width: 400px;
+	height: 25px;
+	font-size: 20px;
+	text-align: center;
+}

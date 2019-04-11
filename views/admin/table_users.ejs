@@ -84,50 +84,21 @@
   <main class="pt-5 mx-lg-5">
 
     <div class="row wow fadeIn mt-5">
-      <div class="col-md-9 mb-4">
+      <div class="col-md-12 mb-4">
         <div class="card">
           <div class="card-body">
-            <canvas id="myChart"></canvas>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-3 mb-4">
-          <div class="card mb-2">
-            <div class="card-body pieCh">
-              <canvas class="pieCanv" id="pieChart"></canvas>
-            </div>
-          </div>
-          <div class="card mb-4">
-            <div class="card-body">
-              <div class="list-group list-group-flush">
-                <a href="#" class="list-group-item list-group-item-action waves-effect">
-                  Зарегистировано пользователей системы:
-                  <span class="badge badge-danger badge-pill pull-right">23 человека<i class="fa fa-arrow-up ml-1"></i></span>
-                </a>
-              </div>
-              <div class="list-group list-group-flush">
-                <a href="#" class="list-group-item list-group-item-action waves-effect">
-                  Удалено пользователей из системы:
-                  <span class="badge badge-primary badge-pill pull-right">4 человека<i class="fa fa-arrow-down ml-1"></i></span>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-    </div>
-
-    <div class="row wow fadeIn">
-      <div class="col-md-6 mb-4">
-        <div class="card">
-          <div class="card-body">
-            <h3>Пользователи системы (студенты)</h3>
-            <table class="table table-hover">
+            <h3>Все пользователи системы</h3>
+            <table class="table table-hover table-users">
               <thead class="pink lighten-4">
                 <tr>
                   <th scope="col">Id</th>
                   <th scope="col">Имя</th>
                   <th scope="col">Фамилия</th>
+                  <th scope="col">Номер группы</th>
+                  <th scope="col">Роль в системе</th>
                   <th scope="col">E-mail</th>
+                  <th scope="col">Пароль</th>
+                  <th scope="col"></th>
                 </tr>
               </thead>
               <tbody>
@@ -135,25 +106,41 @@
                     <td scope="row">1</td>
                     <td>Маша</td>
                     <td>Шорохова</td>
+                    <td>454</td>
+                    <td>Студент</td>
                     <td>masha@mail.ru</td>
+                    <td>12345</td>
+                    <td><button class="btn btn-about-user">Подробнее</button></td>
                   </tr>
                   <tr>
                     <td scope="row">2</td>
                     <td>Петя</td>
                     <td>Горохов</td>
+                    <td>455</td>
+                    <td>Студент</td>
                     <td>petya@gmail.com</td>
+                    <td>qwerty</td>
+                    <td><button class="btn btn-about-user">Подробнее</button></td>
                   </tr>
                   <tr>
                     <td scope="row">3</td>
                     <td>Анна</td>
                     <td>Любимова</td>
+                    <td>565</td>
+                    <td>Администратор</td>
                     <td>anny555@gmail.com</td>
+                    <td>abc123</td>
+                    <td><button class="btn btn-about-user">Подробнее</button></td>
                   </tr>
                   <tr>
                     <td scope="row">4</td>
                     <td>Олег</td>
                     <td>Григорьев</td>
+                    <td>123</td>
+                    <td>Администратор</td>
                     <td>grigoriev777@gmail.com</td>
+                    <td>olegadmin</td>
+                    <td><button class="btn btn-about-user">Подробнее</button></td>
                   </tr>
               </tbody>
             </table>
@@ -161,37 +148,6 @@
         </div>
       </div>
 
-      <div class="col-md-6 mb-4">
-          <div class="card">
-            <div class="card-body">
-                <h3>Администраторы (преподаватели)</h3>
-              <table class="table table-hover">
-                <thead class="blue lighten-4">
-                  <tr>
-                  <th scope="col">Id</th>
-                  <th scope="col">Имя</th>
-                  <th scope="col">Фамилия</th>
-                  <th scope="col">E-mail</th>
-                </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                    <td scope="row">1</td>
-                    <td>Ирина</td>
-                    <td>Соболева</td>
-                    <td>irka_lala@mail.ru</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">2</td>
-                    <td>Иван</td>
-                    <td>Лебедев</td>
-                    <td>vannyyyy@gmail.com</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
-        </div>
     </div>
   </main>
 
@@ -207,9 +163,7 @@
   <script>
     new WOW().init();
   </script>
-  <script type="text/javascript" src="../../js/admin_profile.js">
 
-  </script>
 </body>
 
 </html>

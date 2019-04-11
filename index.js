@@ -30,19 +30,19 @@ app.get('/', function (req, res) {
 });
 
 app.get('/profile', function (req, res) {
-  res.render('profile', {profileID: req.params.id, info: info});
+  res.render('user_profile/profile', {profileID: req.params.id, info: info});
 });
 
 app.get('/profile/:id', function (req, res) {
-  res.render('profile', {profileID: req.params.id, info: info});
+  res.render('user_profile/profile', {profileID: req.params.id, info: info});
 });
 
 app.get('/authorization/error', function (req, res) {
-  res.render('profile_err');
+  res.render('user_profile/profile_err');
 });
 
 app.get('/profile_settings', function (req, res) {
-  res.render('profile_settings', {profileID: req.params.id, info: info});
+  res.render('user_profile/profile_settings', {profileID: req.params.id, info: info});
 });
 
 app.get('/admin', function (req, res) {
@@ -66,7 +66,7 @@ app.get('/task/:num', function (req, res) {
 });
 
 app.get('/lesson/:num', function (req, res) {
-  res.render('lessons/lesson', {profileID: req.params.id, lessonNum: req.params.num});
+  res.render('lessons/lesson1', {profileID: req.params.id, lessonNum: req.params.num});
 });
 
 app.post('/registration', function (req, res) {
@@ -82,7 +82,7 @@ app.post('/registration', function (req, res) {
   var query = db.query('INSERT INTO users SET ?', user, function(err, result) {
     console.log(err);
     console.log(result);
-    res.redirect('/profile/' + result.insertId);
+    res.redirect('/user_profile/profile/' + result.insertId);
   });
 });
 
@@ -102,7 +102,7 @@ app.post('/authorization', function (req, res) {
       console.log(result[0].email);
       console.log(result.length);
 
-      res.redirect('/profile/' + result[0].id_user);
+      res.redirect('/user_profile/profile/' + result[0].id_user);
     }
   });
 });

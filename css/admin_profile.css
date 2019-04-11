@@ -6,33 +6,30 @@ header > .sidebar-fixed.position-fixed > .list-group-flush > a.adm-profile {
 .adm-data > h2,
 .adm-features > h2 {
   color: #6C3075;
-  font-family: "Monotype Corsiva" Cursive;
-  font-style: oblique;
   text-align: center;
-  font-weight: bold;
   margin-bottom: 30px;
 }
 .adm-data h4,
 .adm-data h6 {
   color: #6C3075;
-  font-family: "Monotype Corsiva" Cursive;
-  font-style: oblique;
 }
 .adm-data input {
   float: right;
   color: #6C3075;
-  font-family: "Monotype Corsiva" Cursive;
-  font-style: oblique;
 	width: 400px;
 	height: 25px;
 	font-size: 20px;
 	text-align: center;
+  border-radius: 7px;
 }
 .adm-features li {
-  /* list-style-type: none;
-  text-align: center; */
+  list-style-type: none;
   font-size: 1.3em;
-  font-family: "Monotype Corsiva" Cursive;
-  font-style: oblique;
   padding: 12px;
+}
+.adm-features li > a {
+  color: #6C3075;
+}
+.adm-features li > a:hover{
+  color: darkblue;
 }

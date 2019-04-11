@@ -1,3 +1,9 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&subset=cyrillic');
+
+body {
+  background-image: url(../img/admin_bg.jpg);
+}
+
 header > .sidebar-fixed.position-fixed > .list-group-flush > a {
   color: #A978B5;
 }
@@ -30,7 +36,6 @@ header > .sidebar-fixed.position-fixed > .list-group-flush > a {
         display: none;
     }
 }
-
 .min-user-table > tbody {
     display:block;
     max-height:200px;

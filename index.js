@@ -87,12 +87,10 @@ app.post('/registration', function (req, res) {
 });
 
 app.post('/authorization', function (req, res) {
-
   let user = {
     email: req.body.email,
     password: req.body.password
   }
-
   var query = db.query("SELECT * FROM users WHERE email = '" + req.body.email + "' AND password = '" + req.body.password + "'", function(error, result, fields){
     if (error) throw error;
     if(result.length == 0) { // 0 – запись в БД не найдена
@@ -106,6 +104,27 @@ app.post('/authorization', function (req, res) {
     }
   });
 });
+
+
+// app.post('/table_users', function (req, res, rows) {
+//   console.log("Я в пользователях");
+//   res.writeHead(200, {
+//     'Content-Type': 'text/html'
+//   });
+//   res.write("<table><h1>Пользователи</h1>");
+//   var strUser = "";
+//   var query = db.query("SELECT * FROM users", function(error, result, fields){
+//     if (error) throw error;
+//
+//     for(var i in rows) {
+//       strUser = '<tr><td>' + rows[i].id_user + '</td><td>' + rows[i].name + '</td><td>' + rows[i].surname + '</td></tr>';
+//       console.log(strUser);
+//       res.write(strUser);
+//     }
+//     res.write("</table>");
+//     res.end();
+//   });
+// });
 
 // прописать отдельные получения кода (асинхронно отправляется код) POST
 // полученую строку с кодом и номер задачи запускать [eval()]

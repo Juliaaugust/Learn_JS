@@ -13,72 +13,15 @@
   <!-- Material Design Bootstrap -->
   <link href="../../css/mdb.min.css" rel="stylesheet">
   <!-- Your custom styles (optional) -->
-  <link href="../../css/admin.css" rel="stylesheet">
+  <link href="../../css/admin_main.css" rel="stylesheet">
+  <link href="../../css/admin_profile.css" rel="stylesheet">
   <!-- Для иконок -->
   <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 </head>
 
 <body class="pink lighten-5">
-  <header>
 
-    <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
-      <div class="container-fluid">
-      <a class="navbar-brand waves-effect" href="#">
-        <img src="../../img/logo.png" alt="LearnJS">
-      </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-
-        <div class="collapse navbar-collapse" id="navbarContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item active">
-              <a href="#" class="nav-link waves-effect">Домой</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link waves-effect">Пользователи</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link waves-effect">Задачи</a>
-            </li>
-            <li class="nav-item">
-              <a href="#" class="nav-link waves-effect">Тесты</a>
-            </li>
-          </ul>
-
-          <ul class="navbar-nav nav-flex-icons">
-            <li class="nav-item mr-2">
-              <a href="/">
-                <button class="exit-btn waves-effect">Выйти</button>
-              </a>
-
-            </li>
-          </ul>
-
-        </div>
-
-      </div>
-    </nav>
-
-    <div class="sidebar-fixed position-fixed">
-      <a href="#" class="logo-wrapper waves-effect">
-        <img src="../../img/adm_tech.jpg" alt="" class="img-fluid">
-      </a>
-
-      <div class="list-group list-group-flush">
-        <a href="/admin" class="list-group-item waves-effect active">
-          <i class="fa fa-user mr-3"></i>Мой профиль
-        </a>
-        <a href="/toolbar" class="list-group-item waves-effect">
-          <i class="fa fa-pie-chart mr-3"></i>Панель инструментов
-        </a>
-        <a href="/table_users" class="list-group-item waves-effect">
-          <i class="fa fa-table mr-3"></i>Таблицы пользователей
-        </a>
-        <a href="/lesson_plans" class="list-group-item waves-effect">
-          <i class="fa fa-map mr-3"></i>Планы уроков
-        </a>
-      </div>
-    </div>
-  </header>
+<% include ./../blocks/header_admin.ejs %>
 
   <main class="pt-5 mx-lg-5">
 
@@ -102,9 +45,10 @@
     <div class="col-md-6 mb-4 adm-features">
       <h2>Мои возможности</h2>
       <ul>
-        <li><a href="#">Просмотр основных параметров</a></li>
-        <li><a href="#">Просмотр и редактирование данных пользователей системы</a></li>
-        <li><a href="#">Просмотр и редактирование плана обучения</a></li>
+        <li><a href="/admin">Просмотр и редактирование своих личных данных</a></li>
+        <li><a href="/table_users">Просмотр и редактирование данных пользователей системы</a></li>
+        <li><a href="/toolbar">Просмотр основных параметров</a></li>
+        <li><a href="/lesson_plans">Просмотр и редактирование плана обучения</a></li>
         <li><a href="#">Просмотр и редактирование задач в составе системы</a></li>
         <li><a href="#">Просмотр и редактирование тестов для задач</a></li>
       </ul>
@@ -124,6 +68,7 @@
   <script>
     new WOW().init();
   </script>
+  <script type="text/javascript" src="../../js/admin_main.js"></script>
 </body>
 
 </html>

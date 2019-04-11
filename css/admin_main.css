@@ -1,3 +1,6 @@
+header > .sidebar-fixed.position-fixed > .list-group-flush > a {
+  color: #A978B5;
+}
 .sidebar-fixed {
     height: 100vh;
     width: 270px;
@@ -46,11 +49,4 @@ thead, tbody tr {
 }
 .btn-about-user {
   background-color: #C7CFDB;
-}
-
-.adm-data > h2,
-.adm-features > h2 {
-  color: #6C3075;
-  font-family: "Monotype Corsiva" Cursive;
-  font-style: oblique;
 }

@@ -1,21 +1,15 @@
 const express = require("express");
 const app = express();
 const bodyParser = require('body-parser');
-var mysql = require('mysql');
+
+const db = require('./model/model.js').db;
+
 app.set("view engine", "ejs");
 app.set("views", "./views");
 
 app.use(bodyParser.urlencoded({extended: false}));
 
 app.listen(3000);
-
-// Create connection
-const db = mysql.createConnection({
-  host: 'localhost',
-  user: 'me',
-  password: 'root',
-  database: 'users'
-});
 
 app.use('/css', express.static('css'));
 app.use('/img', express.static('img'));
@@ -79,10 +73,10 @@ app.post('/registration', function (req, res) {
     password: req.body.password
   }
 
-  var query = db.query('INSERT INTO users SET ?', user, function(err, result) {
+  var query = db.query('INSERT INTO user SET ?', user, function(err, result) {
     console.log(err);
     console.log(result);
-    res.redirect('/user_profile/profile/' + result.insertId);
+    res.redirect('/profile/' + result.insertId);
   });
 });
 
@@ -91,7 +85,7 @@ app.post('/authorization', function (req, res) {
     email: req.body.email,
     password: req.body.password
   }
-  var query = db.query("SELECT * FROM users WHERE email = '" + req.body.email + "' AND password = '" + req.body.password + "'", function(error, result, fields){
+  var query = db.query("SELECT * FROM user WHERE email = '" + req.body.email + "' AND password = '" + req.body.password + "'", function(error, result, fields){
     if (error) throw error;
     if(result.length == 0) { // 0 – запись в БД не найдена
       console.log("Неверный логин или пароль");
@@ -100,7 +94,7 @@ app.post('/authorization', function (req, res) {
       console.log(result[0].email);
       console.log(result.length);
 
-      res.redirect('/user_profile/profile/' + result[0].id_user);
+      res.redirect('/profile/' + result[0].id_user);
     }
   });
 });
@@ -113,7 +107,7 @@ app.post('/authorization', function (req, res) {
 //   });
 //   res.write("<table><h1>Пользователи</h1>");
 //   var strUser = "";
-//   var query = db.query("SELECT * FROM users", function(error, result, fields){
+//   var query = db.query("SELECT * FROM user", function(error, result, fields){
 //     if (error) throw error;
 //
 //     for(var i in rows) {
@@ -133,3 +127,5 @@ app.post('/authorization', function (req, res) {
 // routes: файлы, которые отвечают за подпути (маршрутизация)
 
 // ajax
+
+// model - mod control view

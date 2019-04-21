@@ -1,4 +1,3 @@
 $(function(){
-  console.log("Я тут");
-
+  // console.log("Я тут");
 });

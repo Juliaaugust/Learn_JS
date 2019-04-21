@@ -23,6 +23,22 @@ app.get('/', function (req, res) {
   res.render('main/main');
 });
 
+app.get('/info', function (req, res) {
+  res.render('main/info');
+});
+
+app.get('/article', function (req, res) {
+  res.render('articles/article_main');
+});
+
+app.get('/article/:num', function (req, res) {
+  res.render('articles/article1', {profileID: req.params.id, info: info});
+});
+
+app.get('/tests', function (req, res) {
+  res.render('tests/test_main');
+});
+
 app.get('/profile', function (req, res) {
   res.render('user_profile/profile', {profileID: req.params.id, info: info});
 });
@@ -56,7 +72,11 @@ app.get('/lesson_plans', function (req, res) {
 });
 
 app.get('/task/:num', function (req, res) {
-  res.render('tasks/task2', {profileID: req.params.id, taskNum: req.params.num});
+  res.render('tasks/task3', {profileID: req.params.id, taskNum: req.params.num});
+});
+
+app.get('/lesson', function (req, res) {
+  res.render('lessons/lesson_main');
 });
 
 app.get('/lesson/:num', function (req, res) {
@@ -66,6 +86,7 @@ app.get('/lesson/:num', function (req, res) {
 app.post('/registration', function (req, res) {
 
   let user = {
+    id_user_role: 1,
     name: req.body.name,
     surname: req.body.surname,
     group: req.body.group,
@@ -94,20 +115,45 @@ app.post('/authorization', function (req, res) {
       console.log(result[0].email);
       console.log(result.length);
 
-      res.redirect('/profile/' + result[0].id_user);
+      // res.redirect('/profile/' + result[0].id_user);
+      res.redirect('/admin');
+      // var role = query.id_user_role;
+      console.log(result);
+
     }
   });
 });
 
 
-// app.post('/table_users', function (req, res, rows) {
+//////////////////////////////////////////////
+// app.post('/authorization', function (req, res) {
+//   let user = {
+//     email: req.body.email,
+//     password: req.body.password
+//   }
+//   var query = db.query("SELECT * FROM user WHERE email = '" + req.body.email + "' AND password = '" + req.body.password + "'", function(error, result, fields){
+//     if (error) throw error;
+//     if(result.length == 0) { // 0 – запись в БД не найдена
+//       console.log("Неверный логин или пароль");
+//       res.redirect('/authorization/error');
+//     } else {
+//       console.log(result[0].email);
+//       console.log(result.length);
+//
+//       res.redirect('/profile/' + result[0].id_user);
+//     }
+//   });
+// });
+
+
+// app.get('/table_users', function (req, res, rows) {
 //   console.log("Я в пользователях");
 //   res.writeHead(200, {
 //     'Content-Type': 'text/html'
 //   });
 //   res.write("<table><h1>Пользователи</h1>");
 //   var strUser = "";
-//   var query = db.query("SELECT * FROM user", function(error, result, fields){
+//   var query = db.query("SELECT * FROM user", function(error, result, fields)){
 //     if (error) throw error;
 //
 //     for(var i in rows) {

@@ -72,11 +72,15 @@ app.get('/lesson_plans', function (req, res) {
 });
 
 app.get('/task/1', function (req, res) {
-  res.render('tasks/task1', {profileID: req.params.id, taskNum: req.params.num});
+  res.render('tasks/task1', {taskNum: 1});
 });
 
 app.get('/task/2', function (req, res) {
-  res.render('tasks/task2', {profileID: req.params.id, taskNum: req.params.num});
+  res.render('tasks/task2', {taskNum: 2});
+});
+
+app.get('/task/3', function (req, res) {
+  res.render('tasks/task3', {taskNum: 3});
 });
 
 app.get('/lesson', function (req, res) {

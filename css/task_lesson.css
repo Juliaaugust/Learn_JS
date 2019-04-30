@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700&subset=cyrillic');
+
 .task_num, .lesson_num {
 	background: url(../img/flowers_bg.jpg) center/cover;
 	padding-top: 100px;
@@ -54,6 +56,9 @@
 	margin-bottom: 10px;
 }
 
+.tables-cpk {
+	font-size: 16px;
+}
 .task-table > tbody {
     display:block;
     max-height:200px;
@@ -66,5 +71,10 @@ thead, tbody tr {
     table-layout:fixed;
 }
 thead {
-	background: pink;
+	background: #A978B5;
+	color: #fff;
+}
+.tab-header {
+	text-align: center;
+	color: #A978B5;
 }

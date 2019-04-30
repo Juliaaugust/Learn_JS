@@ -53,3 +53,18 @@
 	border-radius: 3px;
 	margin-bottom: 10px;
 }
+
+.task-table > tbody {
+    display:block;
+    max-height:200px;
+    overflow-y:auto;
+		font-size: 16px;
+}
+thead, tbody tr {
+    display:table;
+    width:100%;
+    table-layout:fixed;
+}
+thead {
+	background: pink;
+}

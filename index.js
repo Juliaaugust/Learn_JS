@@ -71,8 +71,12 @@ app.get('/lesson_plans', function (req, res) {
   res.render('admin/lesson_plans', {profileID: req.params.id, info: info});
 });
 
-app.get('/task/:num', function (req, res) {
-  res.render('tasks/task3', {profileID: req.params.id, taskNum: req.params.num});
+app.get('/task/1', function (req, res) {
+  res.render('tasks/task1', {profileID: req.params.id, taskNum: req.params.num});
+});
+
+app.get('/task/2', function (req, res) {
+  res.render('tasks/task2', {profileID: req.params.id, taskNum: req.params.num});
 });
 
 app.get('/lesson', function (req, res) {

@@ -31,21 +31,27 @@
 
   <div class="container main-container">
     <h3 class="header">Условие задачи: </h3>
-    <p class="main_text">Создайте переменную <b>weight</b> и запишите в нее ваш вес (любое число, например, 50). <br>
-    Создайте переменную <b>c</b>, запишите в нее значение скорости света в вакууме в метрах в секунду: 300000000. <br>
-    Вычислите значение энергии тела (вес которого равен значению weight) с помощью знаменитой формулы <b>E=mc<sup>2</sup></b>, где m — это вес (weight), а c – это скорость света. <br>
-    Запишите значение в переменную <b>energy</b>.</p>
+    <p class="main_text">В данной задаче необходимо оценить индекс воспроизводимости Cp по изученной ранее формуле
+      на примере толщины полимерных пленок.</p>
+    <p class="main_text">Для этого необходимо создать переменную <b>VGD</b> и записать в нее верхнюю границу допуска, равную
+      в данном случае <i>255</i>, а также переменную <b>NGD</b>, которая будет содержать в себе значение нижней границы
+      допуска – <i>245</i>.</p>
+    <p class="main_text">Кроме того, нужно задать переменную <b>sigma</b> – стандартное отклонение, равное <i>1,48</i>.</p>
+    <p class="main_text">Результат вычислений необходимо записать в переменную <b>Cp</b>, а затем нажать кнопку «проверить».</p>
     <h3 class="header">Решение:</h3>
     <div id="codeeditor"></div>
     <div class="row">
-      <a href="#myResult" class="res_a"><button class="btn btn-primary mt-1 mx-1" id="check_btn" type="submit">Отправить</button></a>
-      <button class="btn btn-primary mt-1" type="submit">Пройти дальше</button>
+      <a href="#myResult" class="res_a"><button class="btn btn-primary mt-1 mx-2" id="check_btn" type="submit">Отправить</button></a>
+      <button class="btn btn-primary mt-1 mx-2 again" type="submit">Решить еще раз</button>
+      <button class="btn btn-primary mt-1 mx-2 next" type="submit">Пройти дальше</button>
     </div>
   </div>
 
   <div class="container task-container res-container" id="myResult">
     <h3 class="header">Результат решения: </h3>
     <p class="res_text main_text"></p>
+    <a href="#more" class="more_a"><button class="btn btn-primary mb-3 more" type="button" name="button">Подробнее</button></a>
+    <p class="more_text main_text" id="more"></p>
   </div>
 
   <script type="text/javascript" src="../../js/check_tasks/check_task_1.js"></script>

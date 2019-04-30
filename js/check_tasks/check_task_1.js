@@ -5,7 +5,12 @@ var editor = CodeMirror(document.getElementById('codeeditor'), {
   lineNumbers: true
 });
 
+var res = document.getElementsByClassName("res-container")[0];
 var res_text = document.getElementsByClassName("res_text")[0];
+var more_text = document.getElementsByClassName("more_text")[0];
+var more = document.getElementsByClassName("more")[0];
+
+var err = 0; // отслеживаем ошибку "содержание числовых значений переменных" (0 - такой ошибки нет, 1 - есть)
 
 check_btn.onclick = function(){
     // получаем код
@@ -16,44 +21,89 @@ check_btn.onclick = function(){
   	} catch (e){
   		console.log("Неккоректный JS код\n" + e.toString());
       res_text.innerHTML = "Ошибка!<br>Неккоректный JS код";
+      var t0 = e.toString();
+      res.style.display="block";
+
+      more.onclick = function(){
+        more_text.innerHTML = t0;
+      }
+
   		return;
   	}
   	// Проверка наличия функции
-  	if(typeof(weight) === "number"){
-  		console.log("Переменная 'weight' корректна");
+  	if(typeof(Cp) === "number" && typeof(NGD) === "number" && typeof(VGD) === "number" && typeof(sigma) === "number"){
+  		console.log("Переменные корректны – содержат числовые значения");
 
-      if (c === 300000000) {
-        console.log("Переменная 'c' корректна");
+      //Проверка правильности работы блока кода
+      var passed_test = 0;
 
-        if (energy === weight * (Math.pow(c, 2))) {
-          console.log("Все правильно!");
-          res_text.innerHTML = "Молодец!<br>Ваше решение абсолютно верное!";
+      if (!(isNaN(Cp) && isNaN(VGD) && isNaN(NGD) && isNaN(sigma))){
+        passed_test +=1;
+      	var t1 = "Тест 1 (отсутствие NaN значений в переменных) пройден!";
+      } else var t1 = "Тест 1 (отсутствие NaN значений в переменных) НЕ пройден!";
 
-        } else {
-          console.log("Переменная 'energy' НЕкорректна");
-          res_text.innerHTML = "Ошибка!<br>Переменная 'energy' НЕкорректна";
-        }
+      if(VGD === 255){
+        passed_test +=1;
+      	var t2 ="Тест 2 (верхняя граница содержит значение 255) пройден!";
+      } else var t2 ="Тест 2 (верхняя граница содержит значение 255) НЕ пройден!";
 
+      if(NGD === 245){
+        passed_test +=1;
+      	var t3 = "Тест 3 (нижняя граница содержит значение 245) пройден!";
+      } else var t3 = "Тест 3 (нижняя граница содержит значение 245) НЕ пройден!";
+
+      if(sigma === 1.48){
+        passed_test +=1;
+      	var t4 = "Тест 4 (сигма содержит значение 1.48) пройден!";
+      } else var t4 = "Тест 4 (сигма содержит значение 1.48) НЕ пройден!";
+
+      if(Cp.toFixed(3) == 1.126){
+        passed_test +=1;
+      	var t5 = "Тест 5 (Cp содержит корректное значение) пройден!";
+      } else var t5 = "Тест 5 (Cp содержит корректное значение) НЕ пройден!";
+
+      console.log(passed_test);
+
+      if (passed_test === 5) {
+        res_text.innerHTML = "Молодец!<br>Ваше решение абсолютно верное!";
       } else {
-        console.log("Переменная 'c' НЕкорректна");
-        res_text.innerHTML = "Ошибка!<br>Переменная 'c' НЕкорректна";
+        res_text.innerHTML = "Ошибка!<br>Не все тесты пройдены!";
       }
   	} else {
-      console.log("Переменная 'weight' НЕкорректна");
-      res_text.innerHTML = "Ошибка!<br>Переменная 'weight' НЕкорректна";
+      err = 1;
+      res_text.innerHTML = "Ошибка!<br>Переменные НЕ корректны!<br>";
+
     }
-    var res = document.getElementsByClassName("res-container")[0];
+
     res.style.display="block";
-    
+
+    more.onclick = function(){
+      if (err == 0) {
+        more_text.innerHTML = t1 + "<br>" + t2 + "<br>" + t3 + "<br>" + t4 + "<br>" + t5;
+      } else if (err == 1) {
+        more_text.innerHTML = "Одна или несколько переменных НЕ содержит числовые значения";
+      }
+    }
+
     // скроллинг страницы вниз к блоку с результатом
     $("a.res_a").click(function () {
+      var elementClick = $(this).attr("href");
+      var destination = $(elementClick).offset().top;
+      $('html').animate({ scrollTop: destination }, 1100);
+      return false;
+    });
+
+    $("a.more_a").click(function () {
         var elementClick = $(this).attr("href");
         var destination = $(elementClick).offset().top;
-        if ($.browser.safari) {
-            $('body').animate({ scrollTop: destination }, 1100); //1100 - скорость
-        } else {
-            $('html').animate({ scrollTop: destination }, 1100);
-        }
+        $('html').animate({ scrollTop: destination }, 1100);
         return false;
     });
+}
+
+var again_btn = document.getElementsByClassName("again")[0];
+again_btn.onclick = function(){
+  res.style.display="none";
+  more_text.innerHTML = "";
+  err = 0;
 }

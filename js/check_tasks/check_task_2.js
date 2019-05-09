@@ -58,10 +58,10 @@ check_btn.onclick = function(){
       // самостоятельно расчитываем суммы табличных значений, чтобы потом сравнить их с пользовательскими
       var correctSumW = correctSumL = 0;
       for (var i = 0; i < width_arr.length; i++) {
-      	correctSumW += parseInt(width_arr[i]);
+      	correctSumW += parseFloat(width_arr[i]);
       }
       for (var i = 0; i < length_arr.length; i++) {
-      	correctSumL += parseInt(length_arr[i]);
+      	correctSumL += parseFloat(length_arr[i]);
       }
 
       // сравниваем расчитанные значения с пользовательскими

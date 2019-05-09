@@ -134,24 +134,6 @@ app.post('/authorization', function (req, res) {
 
 
 //////////////////////////////////////////////
-// app.post('/authorization', function (req, res) {
-//   let user = {
-//     email: req.body.email,
-//     password: req.body.password
-//   }
-//   var query = db.query("SELECT * FROM user WHERE email = '" + req.body.email + "' AND password = '" + req.body.password + "'", function(error, result, fields){
-//     if (error) throw error;
-//     if(result.length == 0) { // 0 – запись в БД не найдена
-//       console.log("Неверный логин или пароль");
-//       res.redirect('/authorization/error');
-//     } else {
-//       console.log(result[0].email);
-//       console.log(result.length);
-//
-//       res.redirect('/profile/' + result[0].id_user);
-//     }
-//   });
-// });
 
 
 // app.get('/table_users', function (req, res, rows) {

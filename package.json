@@ -15,7 +15,8 @@
     "cake": "^0.1.1",
     "ejs": "^2.6.1",
     "express": "^4.16.4",
-    "mysql": "^2.16.0"
+    "mysql": "^2.16.0",
+    "plotly.js-dist": "^1.47.4"
   },
   "devDependencies": {},
   "author": "",

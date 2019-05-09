@@ -15,7 +15,7 @@
   <script type="text/javascript" src="../../lib/codemirror.js"></script>
   <link rel="stylesheet" href="../../lib/codemirror.css">
   <script type="text/javascript" src="../../mode/javascript/javascript.js"></script>
-  <title>Задача 1</title>
+  <title>Задача 3</title>
 </head>
 <body>
 
@@ -31,23 +31,163 @@
 
   <div class="container main-container">
     <h3 class="header">Условие задачи: </h3>
-    <p class="main_text">Создайте функцию <b>Создайте функцию</b>, которая находит квадрат суммы двух чисел
-      по формуле <b>a<sup>2</sup> + 2ab + b<sup>2</sup></b> <br>
-    Вычислите значение энергии тела (вес которого равен значению weight) с помощью знаменитой формулы <b>E=mc<sup>2</sup></b>, где m — это вес (weight), а c – это скорость света. <br>
-    Запишите значение в переменную <b>energy</b>.</p>
+    <p class="main_text">Ниже приведены таблицы, в которых содержатся данные с производственной линии.</p>
+    <p class="main_text">Необходимо, обратившись к данным из таблицы, вычислить среднее значение для длины и толщины рулона.</p>
+    <p class="main_text">Среднюю толщину запишите в переменную <b>avL</b>, а среднюю толщину – в переменную <b>avW</b>.</p>
+
+    <p class="main_text">Чтобы обратиться к данным из таблицы, необходимо использовать массив <b>width_arr</b>
+    для получения значений средней толщины рулона по ширине и массив <b>length_arr</b> для получения значений
+    средней толщины рулона по длине.</p>
+
+    <p class="main_text">Для сохранения промежуточных значений расчета – суммы всех значений средней толщины по длине и
+      ширине рулона, используйте переменные <b>sumL</b> и <b>sumW</b> соответственно.</p>
+
+    <div class="row wow fadeIn tables-cpk">
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="tab-header">Средний профиль рулона по ширине</h3>
+            <table class="table table-hover task-table">
+              <thead>
+                <tr>
+                  <th scope="col">Позиция по ширине, мм</th>
+                  <th scope="col">Средняя толщина, мкм</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td class="td-posW">0</td>
+                    <td class="td-avW">253.45</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posW">3.2</td>
+                    <td class="td-avW">248.81</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posW">6.4</td>
+                    <td class="td-avW">252.76</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posW">9.6</td>
+                    <td class="td-avW">252.31</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posW">12.8</td>
+                    <td class="td-avW">254.27</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posW">16.0</td>
+                    <td class="td-avW">255.44</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posW">19.2</td>
+                    <td class="td-avW">251.12</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posW">22.4</td>
+                    <td class="td-avW">248.61</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posW">25.6</td>
+                    <td class="td-avW">245.19</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posW">28.8</td>
+                    <td class="td-avW">261.05</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 mb-4">
+        <div class="card">
+          <div class="card-body">
+            <h3 class="tab-header">Средний профиль рулона по длине</h3>
+            <table class="table table-hover task-table">
+              <thead>
+                <tr>
+                  <th scope="col">Позиция по длине, мм</th>
+                  <th scope="col">Средняя толщина, мкм</th>
+                </tr>
+              </thead>
+              <tbody>
+                  <tr>
+                    <td class="td-posL">0</td>
+                    <td class="td-avL">241.34</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posL">3.2</td>
+                    <td class="td-avL">252.21</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posL">6.4</td>
+                    <td class="td-avL">249.99</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posL">9.6</td>
+                    <td class="td-avL">252.31</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posL">12.8</td>
+                    <td class="td-avL">257.27</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posL">16.0</td>
+                    <td class="td-avL">252.44</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posL">19.2</td>
+                    <td class="td-avL">247.12</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posL">22.4</td>
+                    <td class="td-avL">251.61</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posL">25.6</td>
+                    <td class="td-avL">250.19</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posL">28.8</td>
+                    <td class="td-avL">248.05</td>
+                  </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <button class="btn btn-primary mt-1 mb-4 mx-2 graph" type="submit">Построить графики</button>
+
+    <div class="wrapper">
+      <div id="line-chart-width"></div>
+      <br>
+      <div id="line-chart-length"></div>
+    </div>
+
     <h3 class="header">Решение:</h3>
     <div id="codeeditor"></div>
     <div class="row">
       <a href="#myResult" class="res_a"><button class="btn btn-primary mt-1 mx-1" id="check_btn" type="submit">Отправить</button></a>
-      <button class="btn btn-primary mt-1" type="submit">Пройти дальше</button>
+      <button class="btn btn-primary mt-1 mx-2 again" type="submit">Решить еще раз</button>
+      <button class="btn btn-primary mt-1 mx-2 next" type="submit">Пройти дальше</button>
     </div>
   </div>
 
   <div class="container task-container res-container" id="myResult">
     <h3 class="header">Результат решения: </h3>
     <p class="res_text main_text"></p>
+    <a href="#more" class="more_a"><button class="btn btn-primary mb-3 more" type="button" name="button">Подробнее</button></a>
+    <p class="more_text main_text" id="more"></p>
   </div>
 
   <script type="text/javascript" src="../../js/check_tasks/check_task_3.js"></script>
+
+  <!-- Latest compiled and minified plotly.js JavaScript -->
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+<script type="text/javascript" src="../../js/plotly.js"></script>
 </body>
 </html>

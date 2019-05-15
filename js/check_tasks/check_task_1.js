@@ -65,7 +65,7 @@ check_btn.onclick = function(){
       // console.log(passed_test);
 
       if (passed_test === 5) {
-        res_text.innerHTML = "Молодец!<br>Ваше решение абсолютно верное!";
+        res_text.innerHTML = "Молодец!<br>Ваше решение (расчет индекса Cp) абсолютно верное!";
       } else {
         res_text.innerHTML = "Ошибка!<br>Не все тесты пройдены!";
       }

@@ -10,6 +10,7 @@ var res = document.getElementsByClassName("res-container")[0];
 var res_text = document.getElementsByClassName("res_text")[0];
 var more_text = document.getElementsByClassName("more_text")[0];
 var more = document.getElementsByClassName("more")[0];
+var graph_text = document.getElementsByClassName("graph_text")[0];
 
 var lineDivWidth = document.getElementById('line-chart-width');
 var lineDivLength = document.getElementById('line-chart-length');
@@ -50,31 +51,16 @@ console.log(length_arr);
 console.log(width_pos_arr);
 console.log(length_pos_arr);
 
-var traceWidth = {
+var correctTraceWidth = {
   x: width_pos_arr,
   y: width_arr,
-  type: 'scatter'
+  type: "scatter"
 };
-var traceLength = {
+var correctTraceLength = {
   x: length_pos_arr,
   y: length_arr,
-  type: 'scatter'
+  type: "scatter"
 };
-
-var dataWidth = [traceWidth];
-var dataLength = [traceLength];
-
-var layoutW = {
-  title:'Средний профиль рулона по ширине'
-};
-var layoutL = {
-  title:'Средний профиль рулона по длине'
-};
-
-// graph.onclick = function(){
-//   Plotly.plot( lineDivWidth, dataWidth, layoutW );
-//   Plotly.plot( lineDivLength, dataLength, layoutL );
-// }
 
 // расчитываем значения avL и avW для доступа к ним пользователя
 var fullSumW = fullSumL = 0;
@@ -114,6 +100,7 @@ check_btn.onclick = function(){
 
       //Проверка правильности работы блока кода
       var passed_test = 0;
+      var passed_graph_test = 0;
 
       // самостоятельно расчитываем значений переменных K, Cp и Cpk, чтобы потом сравнить их с пользовательскими
       var correctK = (Math.abs(250 - avL) ) / 0.5 - (255-245);
@@ -156,10 +143,54 @@ check_btn.onclick = function(){
       	var t7 = "Тест 7 (значение Cpk рассчитано верно) пройден!";
       } else var t7 = "Тест 7 (значение Cpk рассчитано верно) <b>НЕ</b> пройден!";
 
-      // console.log(passed_test);
+      ////////////////////////////////// Графики ///////////////////////////////
+
+      if (JSON.stringify(traceWidth) === JSON.stringify(correctTraceWidth)) {
+        passed_graph_test += 1;
+        var gt1 = "Тест 1 (данные для графика распределения толщины пленки по ширине) пройден!";
+      } else var gt1 = "Тест 1 (данные для графика распределения толщины пленки по ширине) <b>НЕ</b> пройден!";
+
+      if (JSON.stringify(traceLength) === JSON.stringify(correctTraceLength)) {
+        passed_graph_test += 1;
+        var gt2 = "Тест 2 (данные для графика распределения толщины пленки по длине) пройден!";
+      } else var gt2 = "Тест 2 (данные для графика распределения толщины пленки по длине) <b>НЕ</b> пройден!";
+
+      var dataWidth = [traceWidth];
+      var dataLength = [traceLength];
+
+      if (typeof layoutW != "undefined") {
+        passed_graph_test += 1;
+        var gt3 = "Тест 3(объект layoutW существует) пройден!";
+
+        if ("title" in layoutW) {
+          passed_graph_test += 1;
+          var gt4 = "Тест 4 (график распределения толщины пленки по ширине имеет заголовок) пройден!";
+        } else var gt4 = "Тест 4 (график распределения толщины пленки по ширине имеет заголовок) <b>НЕ</b> пройден!";
+
+      } else var gt3 = "Тест 3 (объект layoutW существует) <b>НЕ</b> пройден!";
+
+      if (typeof layoutL != "undefined") {
+        passed_graph_test += 1;
+        var gt5 = "Тест 5 (объект layoutL существует) пройден!";
+
+        if ("title" in layoutL) {
+          passed_graph_test += 1;
+          var gt6 = "Тест 6 (график распределения толщины пленки по длине имеет заголовок) пройден!";
+        } else var gt6 = "Тест 6 (график распределения толщины пленки по длине имеет заголовок) <b>НЕ</b> пройден!";
+
+      } else var gt5 = "Тест 5 (объект layoutL существует) <b>НЕ</b> пройден!";
+
+      graph.onclick = function(){
+        if (passed_graph_test === 6) {
+          Plotly.plot( lineDivWidth, dataWidth, layoutW );
+          Plotly.plot( lineDivLength, dataLength, layoutL );
+        }
+        else graph_text.innerHTML = gt1 + "<br>" + gt2 + "<br>" + gt3 + "<br>" + gt4 + "<br>" + gt5 + "<br>" + gt6;
+      }
+      /////////////////////// Конец проверки графиков //////////////////////////
 
       if (passed_test === 7) {
-        res_text.innerHTML = "Молодец!<br>Ваше решение абсолютно верное!";
+        res_text.innerHTML = "Молодец!<br>Расчет индексов Cp и Cpk абсолютно верный!";
       } else {
         res_text.innerHTML = "Ошибка!<br>Не все тесты пройдены!";
       }
@@ -201,5 +232,6 @@ var again_btn = document.getElementsByClassName("again")[0];
 again_btn.onclick = function(){
   res.style.display="none";
   more_text.innerHTML = "";
+  graph_text.innerHTML = "";
   err = 0;
 }

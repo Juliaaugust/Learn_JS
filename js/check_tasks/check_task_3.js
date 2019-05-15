@@ -71,10 +71,22 @@ var layoutL = {
   title:'Средний профиль рулона по длине'
 };
 
-graph.onclick = function(){
-  Plotly.plot( lineDivWidth, dataWidth, layoutW );
-  Plotly.plot( lineDivLength, dataLength, layoutL );
+// graph.onclick = function(){
+//   Plotly.plot( lineDivWidth, dataWidth, layoutW );
+//   Plotly.plot( lineDivLength, dataLength, layoutL );
+// }
+
+// расчитываем значения avL и avW для доступа к ним пользователя
+var fullSumW = fullSumL = 0;
+for (var i = 0; i < width_arr.length; i++) {
+  fullSumW += parseFloat(width_arr[i]);
 }
+for (var i = 0; i < length_arr.length; i++) {
+  fullSumL += parseFloat(length_arr[i]);
+}
+var avL = fullSumL / length_arr.length;
+var avW = fullSumW / width_arr.length;
+
 
 check_btn.onclick = function(){
     // получаем код
@@ -95,46 +107,58 @@ check_btn.onclick = function(){
   		return;
   	}
 
-    // проверка существования переменных и соотвествия их типу number  && typeof(sumL) === "number" && typeof(sumW) === "number"
-    if(typeof(avL) === "number" && typeof(avW) === "number") {
-      console.log("Переменные для расчета средних значений заданы корректно");
+    // проверка существования переменных и соотвествия их типу number
+    if(typeof(Cp) === "number" && typeof(Cpk) === "number" && typeof(K) === "number" && typeof(sigma) === "number"
+    && typeof(nominThick) === "number" && typeof(VGD) === "number" && typeof(NGD) === "number") {
+      console.log("Переменные для расчета индексов потенциальной пригодности и подтвержденного качества заданы корректно");
 
       //Проверка правильности работы блока кода
       var passed_test = 0;
 
-      // самостоятельно расчитываем суммы табличных значений, чтобы потом сравнить их с пользовательскими
-      var correctSumW = correctSumL = 0;
-      for (var i = 0; i < width_arr.length; i++) {
-      	correctSumW += parseFloat(width_arr[i]);
-      }
-      for (var i = 0; i < length_arr.length; i++) {
-      	correctSumL += parseFloat(length_arr[i]);
-      }
+      // самостоятельно расчитываем значений переменных K, Cp и Cpk, чтобы потом сравнить их с пользовательскими
+      var correctK = (Math.abs(250 - avL) ) / 0.5 - (255-245);
+      var correctCp = (255-245) / (6 * 1.48);
+      var correctCpk = (1 - correctK) * correctCp;
 
       // сравниваем расчитанные значения с пользовательскими
-      if (correctSumW == sumW) {
+      if (nominThick == 250) {
         passed_test +=1;
-      	var t1 ="Тест 1 (сумма значений средней толщины по ширине рулона) пройден!";
-      } else var t1 ="Тест 1 (сумма значений средней толщины по ширине рулона) НЕ пройден!";
+      	var t1 ="Тест 1 (номинальная толщина пленки равна 250 мкм) пройден!";
+      } else var t1 ="Тест 1 (номинальная толщина пленки равна 250 мкм) <b>НЕ</b> пройден!";
 
-      if (correctSumL == sumL) {
+      if(VGD === 255){
         passed_test +=1;
-      	var t2 ="Тест 2 (сумма значений средней толщины по длине рулона) пройден!";
-      } else var t2 ="Тест 2 (сумма значений средней толщины по длине рулона) НЕ пройден!";
+      	var t2 ="Тест 2 (верхняя граница содержит значение 255) пройден!";
+      } else var t2 ="Тест 2 (верхняя граница содержит значение 255) <b>НЕ</b> пройден!";
 
-      if ((correctSumL / length_arr.length)  == avL) {
+      if(NGD === 245){
         passed_test +=1;
-      	var t3 ="Тест 3 (средняя толщина рулона по длине) пройден!";
-      } else var t3 ="Тест 3 (средняя толщина рулона по длине) НЕ пройден!";
+      	var t3 = "Тест 3 (нижняя граница содержит значение 245) пройден!";
+      } else var t3 = "Тест 3 (нижняя граница содержит значение 245) <b>НЕ</b> пройден!";
 
-      if ((correctSumW / width_arr.length) == avW) {
+      if(sigma === 1.48){
         passed_test +=1;
-      	var t4 ="Тест 4 (средняя толщина рулона по ширине) пройден!";
-      } else var t4 ="Тест 4 (средняя толщина рулона по ширине) НЕ пройден!";
+      	var t4 = "Тест 4 (сигма содержит значение 1.48) пройден!";
+      } else var t4 = "Тест 4 (сигма содержит значение 1.48) <b>НЕ</b> пройден!";
+
+      if(K === correctK){
+        passed_test +=1;
+      	var t5 = "Тест 5 (значение К рассчитано верно) пройден!";
+      } else var t5 = "Тест 5 (значение К рассчитано верно) <b>НЕ</b> пройден!";
+
+      if(Cp === correctCp){
+        passed_test +=1;
+      	var t6 = "Тест 6 (значение Cp рассчитано верно) пройден!";
+      } else var t6 = "Тест 6 (значение Cp рассчитано верно) <b>НЕ</b> пройден!";
+
+      if(Cpk === correctCpk){
+        passed_test +=1;
+      	var t7 = "Тест 7 (значение Cpk рассчитано верно) пройден!";
+      } else var t7 = "Тест 7 (значение Cpk рассчитано верно) <b>НЕ</b> пройден!";
 
       // console.log(passed_test);
 
-      if (passed_test === 4) {
+      if (passed_test === 7) {
         res_text.innerHTML = "Молодец!<br>Ваше решение абсолютно верное!";
       } else {
         res_text.innerHTML = "Ошибка!<br>Не все тесты пройдены!";
@@ -143,14 +167,14 @@ check_btn.onclick = function(){
     } else {
       err = 1;
       console.log("Ошибка в объявлении переменных!");
-      res_text.innerHTML = "Ошибка!<br>Переменные НЕ корректны!";
+      res_text.innerHTML = "Ошибка!<br>Переменные <b>НЕ</b> корректны!";
     }
 
     res.style.display="block";
 
     more.onclick = function(){
       if (err == 0) {
-        more_text.innerHTML = t1 + "<br>" + t2 + "<br>" + t3 + "<br>" + t4;
+        more_text.innerHTML = t1 + "<br>" + t2 + "<br>" + t3 + "<br>" + t4 + "<br>" + t5 + "<br>" + t6 + "<br>" + t7;
       } else if (err == 1) {
         more_text.innerHTML = "Одна или несколько переменных НЕ содержит числовые значения!<br>"
         + "Проверьте правильность написания переменных для расчета средних значений и/или соответствие их числовому типу.";

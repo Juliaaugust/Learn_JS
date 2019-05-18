@@ -17,7 +17,7 @@ app.use('/js', express.static('js'));
 app.use('/lib', express.static('lib'));
 app.use('/mode', express.static('mode'));
 
-var info = {curr_level: "1", solved_tasks: "0", publ_articles: "0"};
+var info = {curr_level: "2", solved_tasks: "3", publ_articles: "0"};
 
 app.get('/', function (req, res) {
   res.render('main/main');

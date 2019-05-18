@@ -46,7 +46,8 @@
     <p class="main_text">Для этого необходимо задать значения данных графика, создав объект <b>traceWidth</b> для ширины и <b>traceLength</b> для длины.
       В свойстве <b>x</b> каждого из этих объектов должна храниться позиция по ширине или длине (в массиве <b>width_pos_arr</b> или <b>length_pos_arr</b> соответственно),
       в свойстве <b>y</b> – средняя толщина пленки, распределенная по ширине или длине (в массиве <b>width_arr</b> или <b>length_arr</b> соответственно),
-      а в свойстве <b>type</b> – строка <b>"scatter"</b>, обозначающая тип графика.</p>
+      а в свойстве <b>type</b> – строка <b>"scatter"</b>, обозначающая тип графика. Указать названия условных обозначений графика можно с помощью
+      свойства <b>name</b>, записав в него какую-то строку, например, "Средняя толщина плёнки".</p>
     <p class="main_text">Также не забудьте указать для графиков заголовки: для этого создайте объект <b>layoutW</b> для заголовка графика распределения толщины пленки по ширине
       и объект <b>layoutL</b> – для заголовка графика распределения толщины пленки по длине.</p>
     <p class="main_text">В единственном свойстве <b>title</b> каждого из этих объектов должна храниться строка, которая и будет заголовком графика.</p>
@@ -86,7 +87,7 @@
                   </tr>
                   <tr>
                     <td class="td-posW">16.0</td>
-                    <td class="td-avW">255.44</td>
+                    <td class="td-avW">253.44</td>
                   </tr>
                   <tr>
                     <td class="td-posW">19.2</td>
@@ -94,15 +95,31 @@
                   </tr>
                   <tr>
                     <td class="td-posW">22.4</td>
-                    <td class="td-avW">248.61</td>
+                    <td class="td-avW">247.61</td>
                   </tr>
                   <tr>
                     <td class="td-posW">25.6</td>
-                    <td class="td-avW">245.19</td>
+                    <td class="td-avW">244.19</td>
                   </tr>
                   <tr>
                     <td class="td-posW">28.8</td>
-                    <td class="td-avW">261.05</td>
+                    <td class="td-avW">248.05</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posW">32.0</td>
+                    <td class="td-avW">251.12</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posW">35.2</td>
+                    <td class="td-avW">247.61</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posW">38.4</td>
+                    <td class="td-avW">249.22</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posW">41.6</td>
+                    <td class="td-avW">250.15</td>
                   </tr>
               </tbody>
             </table>
@@ -124,7 +141,7 @@
               <tbody>
                   <tr>
                     <td class="td-posL">0</td>
-                    <td class="td-avL">241.34</td>
+                    <td class="td-avL">246.34</td>
                   </tr>
                   <tr>
                     <td class="td-posL">3.2</td>
@@ -140,7 +157,7 @@
                   </tr>
                   <tr>
                     <td class="td-posL">12.8</td>
-                    <td class="td-avL">257.27</td>
+                    <td class="td-avL">255.27</td>
                   </tr>
                   <tr>
                     <td class="td-posL">16.0</td>
@@ -152,14 +169,30 @@
                   </tr>
                   <tr>
                     <td class="td-posL">22.4</td>
-                    <td class="td-avL">251.61</td>
+                    <td class="td-avL">251.12</td>
                   </tr>
                   <tr>
                     <td class="td-posL">25.6</td>
-                    <td class="td-avL">250.19</td>
+                    <td class="td-avL">244.19</td>
                   </tr>
                   <tr>
                     <td class="td-posL">28.8</td>
+                    <td class="td-avL">252.05</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posL">32.0</td>
+                    <td class="td-avL">247.61</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posL">35.2</td>
+                    <td class="td-avL">251.61</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posL">38.4</td>
+                    <td class="td-avL">249.19</td>
+                  </tr>
+                  <tr>
+                    <td class="td-posL">42.6</td>
                     <td class="td-avL">248.05</td>
                   </tr>
               </tbody>

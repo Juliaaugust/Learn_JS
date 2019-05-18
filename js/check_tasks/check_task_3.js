@@ -54,11 +54,13 @@ console.log(length_pos_arr);
 var correctTraceWidth = {
   x: width_pos_arr,
   y: width_arr,
+  name: 'Средняя толщина плёнки',
   type: "scatter"
 };
 var correctTraceLength = {
   x: length_pos_arr,
   y: length_arr,
+  name: 'Средняя толщина плёнки',
   type: "scatter"
 };
 
@@ -155,8 +157,28 @@ check_btn.onclick = function(){
         var gt2 = "Тест 2 (данные для графика распределения толщины пленки по длине) пройден!";
       } else var gt2 = "Тест 2 (данные для графика распределения толщины пленки по длине) <b>НЕ</b> пройден!";
 
-      var dataWidth = [traceWidth];
-      var dataLength = [traceLength];
+      // максимальные и минимальные значения графиков
+      var up = []
+      var down = []
+      for (var i = 0; i < width_pos_arr.length; i++){
+        up.push(255);
+        down.push(245)
+      }
+      var traceUp = {
+        x: width_pos_arr,
+        y: up,
+        name: 'Верхняя допустимая граница',
+        type: 'scatter'
+      };
+      var traceDown = {
+          x: width_pos_arr,
+          y: down,
+          name: 'Нижняя допустимая граница',
+          type: 'scatter'
+        };
+
+      var dataWidth = [traceWidth, traceUp, traceDown];
+      var dataLength = [traceLength, traceUp, traceDown];
 
       if (typeof layoutW != "undefined") {
         passed_graph_test += 1;

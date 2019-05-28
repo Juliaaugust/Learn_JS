@@ -27,13 +27,13 @@ app.get('/info', function (req, res) {
   res.render('main/info');
 });
 
-app.get('/article', function (req, res) {
-  res.render('articles/article_main');
-});
-
-app.get('/article/:num', function (req, res) {
-  res.render('articles/article1', {profileID: req.params.id, info: info});
-});
+// app.get('/article', function (req, res) {
+//   res.render('articles/article_main');
+// });
+//
+// app.get('/article/:num', function (req, res) {
+//   res.render('articles/article1', {profileID: req.params.id, info: info});
+// });
 
 app.get('/tests', function (req, res) {
   res.render('tests/test_main');

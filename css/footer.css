@@ -1,0 +1,21 @@
+footer {
+  margin-top: 10px;
+  border-top: 2px solid #96425fc5;
+  background-color: rgb(223, 186, 215);
+}
+footer > .container {
+  margin-top: 10px;
+}
+footer i {
+  width: 150px;
+  color: #aa5673ab;
+  margin-bottom: 10px;
+  margin-top: 5px;
+}
+footer i:hover {
+  color: #964260;
+}
+footer h3 {
+  font-size: 24px;
+  color: #964260;
+}

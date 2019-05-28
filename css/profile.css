@@ -26,7 +26,8 @@
 
 .name,
 .welcome > .container > h1,
-.progress_calendar > h1 {
+.progress_calendar > h1,
+.dop > h2 {
 	font-size: 68px;
 	text-transform: uppercase;
 	font-weight: bold;
@@ -35,7 +36,11 @@
 .progress_calendar > h1 {
 	font-size: 32px;
 }
-.progress_calendar > p {
+.dop > h2 {
+	font-size: 28px;
+}
+.progress_calendar > p,
+.dop > p {
 	font-size: 18px;
 	color: #964260;
 }
@@ -213,9 +218,22 @@
 	font-size: 20px;
 	text-align: center;
 }
-.progress_calendar {
+.progress_calendar,
+.dop {
 	background-color: #fff;
 	margin: 15px 12%;
 	padding: 18px;
 	text-align: center;
+}
+.dop a {
+	color: #8856aaab;
+	font-size: 1.1em;
+	font-style: italic;
+}
+.dop a:hover {
+	color: #7B68EE;
+	font-style: normal;
+}
+.page-footer {
+	background: red;
 }

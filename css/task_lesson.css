@@ -78,3 +78,87 @@ thead {
 	text-align: center;
 	color: #A978B5;
 }
+
+p.to-task {
+	border: 3px dashed #fff;
+  background-color: #E2BADB;
+	padding: 20px;
+	margin: 40px 0;
+}
+a.to-task {
+	color: #8856aaab;
+	font-size: 1.1em;
+	font-style: italic;
+}
+a.to-task:hover {
+	color: #7B68EE;
+	font-style: normal;
+}
+
+.no-next {
+	cursor: not-allowed!important;
+}
+
+/* Lessons code */
+
+pre.line-numbers {
+	padding-left: 3.8em;
+}
+pre[class*=language-] {
+	font-size: 1rem;
+  background: #eee;
+  border: 0 solid #3d7e9a;
+	position: relative;
+	padding: 15px;
+  font-family: consolas,monaco,"Andale Mono",monospace;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 0.9;
+  overflow: auto;
+  direction: ltr!important;
+  text-align: left!important;
+  border-left-width: 5px!important;
+  border-right-width: 0!important;
+}
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	top: 3px;
+	left: -3.8em;
+	pointer-events: none;
+	font-size: 110%;
+	border-right: 1px solid #999;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+.line-numbers-rows > span {
+	pointer-events: none;
+	display: block;
+	counter-increment: linenumber;
+}
+.line-numbers-rows > span:before {
+	content: counter(linenumber);
+	color: #999;
+	display: block;
+	padding-right: .8em;
+	text-align: right;
+}
+span.token {
+	font-size: 1.3em;
+}
+span.token.keyword {
+
+}
+span.token.name-var {
+
+}
+span.token.operator {
+
+}
+span.token.number {
+
+}
+span.token.punctuation {
+
+}

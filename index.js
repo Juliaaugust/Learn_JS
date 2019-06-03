@@ -35,9 +35,6 @@ app.get('/info', function (req, res) {
 //   res.render('articles/article1', {profileID: req.params.id, info: info});
 // });
 
-app.get('/tests', function (req, res) {
-  res.render('tests/test_main');
-});
 
 app.get('/profile', function (req, res) {
   res.render('user_profile/profile', {profileID: req.params.id, info: info});
@@ -71,6 +68,10 @@ app.get('/lesson_plans', function (req, res) {
   res.render('admin/lesson_plans', {profileID: req.params.id, info: info});
 });
 
+app.get('/tasks', function (req, res) {
+  res.render('tasks/task_main');
+});
+
 app.get('/task/1', function (req, res) {
   res.render('tasks/task1', {taskNum: 1});
 });
@@ -83,12 +84,27 @@ app.get('/task/3', function (req, res) {
   res.render('tasks/task3', {taskNum: 3});
 });
 
-app.get('/lesson', function (req, res) {
+app.get('/lessons', function (req, res) {
   res.render('lessons/lesson_main');
 });
 
-app.get('/lesson/:num', function (req, res) {
-  res.render('lessons/lesson1', {profileID: req.params.id, lessonNum: req.params.num});
+app.get('/lesson/1', function (req, res) {
+  res.render('lessons/lesson1', {profileID: req.params.id, lessonNum: 1});
+});
+app.get('/lesson/2', function (req, res) {
+  res.render('lessons/lesson2', {profileID: req.params.id, lessonNum: 2});
+});
+app.get('/lesson/3', function (req, res) {
+  res.render('lessons/lesson3', {profileID: req.params.id, lessonNum: 3});
+});
+app.get('/lesson/4', function (req, res) {
+  res.render('lessons/lesson4', {profileID: req.params.id, lessonNum: 4});
+});
+app.get('/lesson/5', function (req, res) {
+  res.render('lessons/lesson5', {profileID: req.params.id, lessonNum: 5});
+});
+app.get('/lesson/6', function (req, res) {
+  res.render('lessons/lesson6', {profileID: req.params.id, lessonNum: 6});
 });
 
 app.post('/registration', function (req, res) {

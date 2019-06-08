@@ -12,7 +12,7 @@
   <script src="../../js/jquery.js"></script>
   <script src="../../js/profile.js"></script>
 
-  <title>Уровень 1 | Урок <%= lessonNum %></title>
+  <title>Уровень 2 | Урок <%= lessonNum %></title>
 </head>
 <body>
 
@@ -26,13 +26,111 @@
   </div>
 
   <div class="container main-container">
-    <h3 class="header">Условия и циклы в языке JavaScript</h3>
-    <p class="main_text">Начнем с самых основ программирования. Для начала стоит четко для себя понять,
-      что же такое компьютер, ведь это то устройство, без которого программирования бы и не существовало.
-      Итак, основные вещи, которые нужно понять:</p>
+    <h3 class="header">Условный оператор if</h3>
+    <p class="main_text">Иногда, в зависимости от условия, нужно выполнить различные действия. Для этого используется
+      оператор <b>if</b>. Например:</p>
+      <pre class="brush: js line-numbers language-js">
+        <code class="language-js">
+          <span class="token keyword">var</span> <span class="token name-var">cpk</span> <span class="token operator">=</span> <span class="token keyword">prompt</span><span class="token punctuation">(</span><span class="token number">"Чему равен индекс Cpk?"</span><span class="token punctuation">);</span>
+          <br>
+          <br>
+          <span class="token keyword">if</span> <span class="token punctuation">(</span><span class="token name-var">cpk</span> <span class="token operator"><=</span> <span class="token number">1</span><span class="token punctuation">)</span>  <span class="token operator">{</span>
+          <br>
+            <span class="token keyword">alert</span><span class="token punctuation">(</span><span class="token number">"Неудовлетворительно"</span><span class="token punctuation">);</span>
+          <br>
+          <span class="token operator">}</span> <span class="token keyword">else</span> <span class="token operator">{</span>
+          <br>
+            <span class="token keyword">alert</span><span class="token punctuation">(</span><span class="token number">"Удовлетворительно"</span><span class="token punctuation">);</span>
+          <br>
+          <span class="token operator">}</span>
+          <span aria-hidden="true" class="line-numbers-rows">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </code>
+      </pre>
+    <p class="main_text">Оператор if («если») получает условие, в примере выше это cpk <= 1. Он вычисляет его, и если
+      результат – true, то выполняет команду. Если нужно выполнить более одной команды – они оформляются блоком кода в
+      фигурных скобках. Однако рекомендуется использовать фигурные скобки всегда, даже когда команда одна. Это улучшает
+      читаемость кода.</p>
+    <p class="main_text">Необязательный блок else («иначе») выполняется, если условие неверно. Бывает нужно проверить
+      несколько вариантов условия. Для этого используется блок <b>else if ...</b> .</p>
 
+    <h3 class="header">Цикл while</h3>
+    <p class="main_text">Цикл while имеет вид:</p>
+    <pre class="brush: js line-numbers language-js">
+      <code class="language-js">
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">условие</span><span class="token punctuation">)</span> <span class="token operator">{</span>
+        <br>
+          <span class="token punctuation">// код, тело цикла</span>
+        <br>
+        <span class="token operator">}</span>
+        <span aria-hidden="true" class="line-numbers-rows">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </code>
+    </pre>
+    <p class="main_text">Пока условие верно – выполняется код из тела цикла. Например, цикл ниже выводит i пока i < 3:</p>
+    <pre class="brush: js line-numbers language-js">
+      <code class="language-js">
+        <span class="token keyword">var</span> <span class="token name-var">i</span> <span class="token operator">=</span> <span class="token number">0</span><span class="token punctuation">;</span>
+        <br>
+        <span class="token keyword">while</span> <span class="token punctuation">(</span><span class="token number">i</span> <span class="token operator"><</span> <span class="token number">3</span><span class="token punctuation">)</span> <span class="token operator">{</span>
+        <br>
+          <span class="token keyword">alert</span><span class="token punctuation">(</span><span class="token name-var">i</span><span class="token punctuation">);</span>
+        <br>
+          <span class="token name-var">i</span><span class="token operator">++</span><span class="token punctuation">;</span>
+        <br>
+        <span class="token operator">}</span>
+        <span aria-hidden="true" class="line-numbers-rows">
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </code>
+    </pre>
+    <p class="main_text">Повторение цикла по-научному называется «итерация». Цикл в примере выше совершает три итерации.</p>
+    <p class="main_text">Если бы i++ в коде выше не было, то цикл выполнялся бы (в теории) вечно. На практике, браузер
+      выведет сообщение о «зависшем» скрипте и посетитель его остановит.</p>
+    <p class="main_text">Условие в скобках интерпретируется как логическое значение, поэтому вместо while (i!=0) обычно
+      пишут while (i).</p>
+    <p class="main_text">Проверку условия можно поставить под телом цикла, используя специальный синтаксис <b>do..while</b>.
+      Цикл, описанный, таким образом, сначала выполняет тело, а затем проверяет условие.</p>
+    <p class="main_text">Синтаксис do..while редко используется, т.к. обычный while нагляднее – в нём не приходится искать
+      глазами условие и ломать голову, почему оно проверяется именно в конце.</p>
+
+    <h3 class="header">Цикл for</h3>
+    <p class="main_text">Чаще всего применяется цикл for. Выглядит он так:</p>
+    <pre class="brush: js line-numbers language-js">
+      <code class="language-js">
+        <span class="token keyword">for</span> <span class="token punctuation">(</span><span class="token number">начало</span><span class="token punctuation">;</span> <span class="token number">условие</span><span class="token punctuation">;</span> <span class="token number">шаг</span><span class="token punctuation">)</span> <span class="token operator">{</span>
+        <br>
+          <span class="token punctuation">// код, тело цикла</span>
+        <br>
+        <span class="token operator">}</span>
+        <span aria-hidden="true" class="line-numbers-rows">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </code>
+    </pre>
+    <p class="main_text">Любая часть for может быть пропущена. Например, можно убрать начало или шаг. А можно и вовсе
+      убрать всё, получив бесконечный цикл. При этом сами точки с запятой ; обязательно должны присутствовать, иначе будет
+      ошибка синтаксиса.</p>
+    <p class="main_text to-task">Теперь, после прохождения данного урока, вы можете решить <a class="to-task" href="/task/2">задачу 2</a>.</p>
       <div class="row">
         <a href="/lesson/6"><button class="btn btn-primary mt-1" type="submit">Пройти дальше</button></a>
+        <a href="/lessons"><button class="btn btn-primary mt-1 ml-4 to-less" type="submit">К урокам</button></a>
       </div>
   </div>
   <% include ./../blocks/footer.ejs %>

@@ -12,7 +12,7 @@
   <script src="../../js/jquery.js"></script>
   <script src="../../js/profile.js"></script>
 
-  <title>Уровень 1 | Урок <%= lessonNum %></title>
+  <title>Уровень 6 | Урок <%= lessonNum %></title>
 </head>
 <body>
 
@@ -26,13 +26,38 @@
   </div>
 
   <div class="container main-container">
-    <h3 class="header">Массивы и объекты в языке JavaScript</h3>
-    <p class="main_text">Начнем с самых основ программирования. Для начала стоит четко для себя понять,
-      что же такое компьютер, ведь это то устройство, без которого программирования бы и не существовало.
-      Итак, основные вещи, которые нужно понять:</p>
-
+    <h3 class="header">Объекты как ассоциативные массивы</h3>
+    <p class="main_text">Объекты в JavaScript сочетают в себе два важных функционала.</p>
+    <p class="main_text">Первый – это ассоциативный массив: структура, пригодная для хранения любых данных. То есть
+      использование объектов как массивов. Второй – языковые возможности для объектно-ориентированного программирования.</p>
+    <p class="main_text"><b>Ассоциативный массив</b> – структура данных, в которой можно хранить любые данные в формате
+      ключ-значение. Её можно легко представить как шкаф с подписанными ящиками. Все данные хранятся в ящичках. По имени можно
+      легко найти ящик и взять то значение, которое в нём лежит.</p>
+    <p class="main_text">В отличие от реальных шкафов, в ассоциативный массив можно в любой момент добавить новые именованные
+      «ящики» или удалить существующие. В других языках программирования такую структуру данных также называют «словарь» и «хэш».</p>
+    <p class="main_text">Пустой объект («пустой шкаф») может быть создан одним из двух синтаксисов:</p>
+    <pre class="brush: js line-numbers language-js">
+      <code class="language-js">
+        <span class="token keyword">var</span> <span class="token name-var">o</span> <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token name-var">Object</span><span class="token punctuation">();</span>
+        <br>
+        <span class="token keyword">var</span> <span class="token name-var">o</span> <span class="token operator">=</span> <span class="token operator">{</span><span class="token operator">}</span><span class="token punctuation">;</span>
+        <span aria-hidden="true" class="line-numbers-rows">
+          <span></span>
+          <span></span>
+        </span>
+      </code>
+    </pre>
+    <p class="main_text">Обычно все пользуются вторым синтаксисом, т.к. он короче.</p>
+    <p class="main_text">Объект может содержать в себе любые значения, которые называются свойствами объекта. Доступ к
+      свойствам осуществляется по имени свойства (иногда говорят «по ключу»). Основные операции с объектами – это создание,
+      получение и удаление свойств. Для обращения к свойствам используется запись «через точку», вида <b>объект.свойство</b></p>
+    <p class="main_text">Значения хранятся «внутри» ящиков. Обратим внимание – любые значения, любых типов: число,
+      строка – не важно. Чтобы прочитать их – также обращаются через точку.</p>
+    <p class="main_text">Удаление осуществляется оператором <b>delete</b>.</p>
+    <p class="main_text to-task">Теперь, после прохождения данного урока, вы можете решить <a class="to-task" href="/task/3">задачу 3</a>.</p>
       <div class="row">
         <a class="no-next" href="#"><button class="btn btn-primary mt-1 no-next" type="submit">Пройти дальше</button></a>
+        <a href="/lessons"><button class="btn btn-primary mt-1 ml-4 to-less" type="submit">К урокам</button></a>
       </div>
   </div>
   <% include ./../blocks/footer.ejs %>

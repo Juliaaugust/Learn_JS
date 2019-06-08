@@ -193,6 +193,10 @@
 .col-md > .btn.btn-success.w-100:hover {
 	background-color: #aa5673ab;
 }
+#article_link:hover {
+	background-color: #96425fc0;
+	cursor: not-allowed;
+}
 
 .main-container > h4, h6 {
   color: #6C3075;

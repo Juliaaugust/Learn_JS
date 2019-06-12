@@ -3,3 +3,47 @@ header > .sidebar-fixed.position-fixed > .list-group-flush > a.adm-table-users {
   color: #fff;
   border-radius: 5px;
 }
+
+.collapse.show img {
+  height: 200px;
+  float: left;
+}
+.collapse.show textarea {
+  font-family: monospace;
+  font-size: 1.2em;
+}
+.collapse.show p {
+  font-size: 1.2em;
+  font-style: italic;
+}
+.collapse.show h3 {
+  color: pink;
+  font-style: italic;
+  font-weight: 600;
+  margin-bottom: 30px;
+  letter-spacing: 2px;
+  text-shadow: 1px 1px 2px rgb(65, 36, 40);
+}
+.collapse.show h5 {
+  margin-top: 20px;
+}
+.collapse.show h5 .task {
+  text-decoration: underline;
+  font-weight: 600;
+}
+
+.collapse.show .status-right {
+  color: rgb(32, 184, 32);
+}
+.collapse.show .status-wrong {
+  color: rgb(189, 19, 19);
+}
+.collapse.show .status-no-answer {
+  color: rgb(85, 85, 100);
+}
+.collapse.show button {
+  border-radius: 5px;
+  color: #fff;
+  background: pink;
+  font-size: 1.2em;
+}

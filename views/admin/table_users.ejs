@@ -28,7 +28,9 @@
         <div class="card">
           <div class="card-body">
             <h3>Все пользователи системы</h3>
-            <table class="table table-hover table-users">
+
+            <div id="accordion">
+              <table class="table table-hover table-users">
               <thead class="pink lighten-4">
                 <tr>
                   <th scope="col">Id</th>
@@ -40,6 +42,197 @@
                   <th scope="col">Пароль</th>
                   <th scope="col"></th>
                 </tr>
+              </thead>
+              </table>
+              <div class="card">
+                <div class="card-header" id="headingOne">
+                  <table>
+                    <tr>
+                      <td scope="row">1</td>
+                      <td>Мария</td>
+                      <td>Шорохова</td>
+                      <td>454</td>
+                      <td>Студент</td>
+                      <td>masha@mail.ru</td>
+                      <td>12345</td>
+                      <td><button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                        Подробно
+                      </button></td>
+                    </tr>
+                    </table>
+                </div>
+
+                <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+                  <div class="card-body row">
+                    <div class="col-md-4 mb-4">
+                      <img src="../../img/avatars/ava_w.jpg" height="200px" alt="">
+                      <p>Шорохова Мария</p>
+                      <p>Студент</p>
+                      <p>Группа 454</p>
+                      <p>Логин: masha@mail.ru</p>
+                      <p>Пароль: 12345</p>
+                      <button type="button" name="button">Назначить администратором</button>
+                    </div>
+
+                    <div class="col-md-8 mb-4">
+                      <h3>Задачи пользователя</h3>
+                        <h5><span class="task">Задача 1:</span> <span class="status status-right">Решено верно</span></h5>
+                        <p>Решение:</p>
+                        <textarea name="name" rows="4" cols="60">
+var VGD = 255;
+var NGD = 245;
+var sigma = 1.48;
+var Cp = (VGD - NGD) / (6 * sigma);</textarea>
+                        <h5><span class="task">Задача 2:</span> <span class="status status-right">Решено верно</span></h5>
+                        <p>Решение:</p>
+                        <textarea name="name" rows="8" cols="60">
+var avL, avW;
+var sumL = sumW = 0;
+
+for (var i = 0; i < length_arr.length; i++) {
+	sumL += parseFloat(length_arr[i]);
+}
+for (var i = 0; i < width_arr.length; i++) {
+	sumW += parseFloat(width_arr[i]);
+}
+avL = sumL / length_arr.length;
+avW = sumW / width_arr.length;</textarea>
+
+                        <h5><span class="task">Задача 3:</span> <span class="status status-no-answer">Не решено</span></h5>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingTwo">
+                  <table>
+                  <tr>
+                    <td scope="row">2</td>
+                    <td>Петр</td>
+                    <td>Горохов</td>
+                    <td>455</td>
+                    <td>Студент</td>
+                    <td>petya@gmail.com</td>
+                    <td>qwerty</td>
+                    <td><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                      Подробно
+                    </button></td>
+                  </tr>
+                  </table>
+                </div>
+                <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+                  <div class="card-body row">
+                    <div class="col-md-4 mb-4">
+                      <img src="../../img/avatars/ava_m.jpg" height="200px" alt="">
+                      <p>Горохов Петр</p>
+                      <p>Студент</p>
+                      <p>Группа 455</p>
+                      <p>Логин: petya@gmail.com</p>
+                      <p>Пароль: qwerty</p>
+                      <button type="button" name="button">Назначить администратором</button>
+                    </div>
+
+                    <div class="col-md-8 mb-4">
+                      <h3>Задачи пользователя</h3>
+                        <h5><span class="task">Задача 1:</span> <span class="status status-right">Решено верно</span></h5>
+                        <p>Решение:</p>
+                        <textarea name="name" rows="4" cols="60">
+var VGD = 255
+var NGD = 245
+var sigma = 1.48
+var Cp = (VGD-NGD)/(6*sigma)</textarea>
+                        <h5><span class="task">Задача 2:</span> <span class="status status-wrong">Решено неверно</span></h5>
+                        <p>Решение:</p>
+                        <textarea name="name" rows="8" cols="60">
+var avL
+var avW
+var sumL = 0
+var sumW = 0
+
+for (var i = 0; i < length_arr.length; i++) {
+	sumL = sumL+parseFloat(length_arr[i])
+}
+for (var i = 0; i < width_arr.length; i++) {
+	sumW = sumW+parseFloat(width_arr[i])
+}
+avL = sumL / length_arr
+avW = sumW / width_arr</textarea>
+
+                        <h5><span class="task">Задача 3:</span> <span class="status status-no-answer">Не решено</span></h5>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="card">
+                <div class="card-header" id="headingThree">
+                  <table>
+                  <tr>
+                    <td scope="row">3</td>
+                    <td>Анна</td>
+                    <td>Любимова</td>
+                    <td>565</td>
+                    <td>Администратор</td>
+                    <td>anny555@gmail.com</td>
+                    <td>abc123</td>
+                    <td><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                      Подробно
+                    </button></td>
+                  </tr>
+                  </table>
+
+                </div>
+                <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+
+
+              <div class="card">
+                <div class="card-header" id="headingFour">
+                  <table>
+                    <tr>
+                      <td scope="row">4</td>
+                      <td>Олег</td>
+                      <td>Григорьев</td>
+                      <td>123</td>
+                      <td>Администратор</td>
+                      <td>grigoriev777@gmail.com</td>
+                      <td>olegadmin</td>
+                    <td><button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                      Подробно
+                    </button></td>
+                  </tr>
+                  </table>
+
+                </div>
+                <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+                  <div class="card-body">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                  </div>
+                </div>
+              </div>
+
+            </div> <!--Accord-->
+
+
+
+            <!-- <table class="table table-hover table-users">
+              <thead class="pink lighten-4">
+
+                <tr>
+                  <th scope="col">Id</th>
+                  <th scope="col">Имя</th>
+                  <th scope="col">Фамилия</th>
+                  <th scope="col">Номер группы</th>
+                  <th scope="col">Роль в системе</th>
+                  <th scope="col">E-mail</th>
+                  <th scope="col">Пароль</th>
+                  <th scope="col"></th>
+                </tr>
+
               </thead>
               <tbody>
                   <tr>
@@ -83,7 +276,7 @@
                     <td><button class="btn btn-about-user">Подробно</button></td>
                   </tr>
               </tbody>
-            </table>
+            </table> -->
           </div>
         </div>
       </div>

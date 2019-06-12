@@ -46,4 +46,10 @@ header > .sidebar-fixed.position-fixed > .list-group-flush > a.adm-table-users {
   color: #fff;
   background: pink;
   font-size: 1.2em;
+  margin-bottom: 25px;
+}
+.collapse.show button:hover {
+  cursor: pointer;
+  color: #fff;
+  background: rgb(182, 127, 136);
 }

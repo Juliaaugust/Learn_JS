@@ -5,7 +5,7 @@ var myChart = new Chart(ctx, {
     labels: ["Уровень 1", "Уровень 2", "Уровень 3", "Уровень 4", "Уровень 5", "Уровень 6"],
     datasets: [{
       label: "Количество добавленных задач",
-      data: [15, 18, 32, 24, 13, 11], // данные графика
+      data: [0.5, 2, 3, 0.5, 0.5, 0.5], // данные графика
       backgroundColor: ["Tomato", "orange", "Khaki", "SpringGreen", "DodgerBlue", "violet"],
       borderColor: ["red", "DarkOrange", "Gold", "MediumSeaGreen", "blue", "magenta"],
       hoverBackgroundColor: ["Salmon", "SandyBrown", "NavajoWhite", "LightGreen", "LightSkyBlue", "Plum"],

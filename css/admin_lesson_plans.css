@@ -3,3 +3,62 @@ header > .sidebar-fixed.position-fixed > .list-group-flush > a.adm-less-plans {
   color: #fff;
   border-radius: 5px;
 }
+
+.card-header {
+  /* background: rgb(243, 201, 208); */
+  background: pink;
+  box-shadow: 0 0 10px rgba(66, 23, 23, 0.5);
+  text-align: center;
+  margin: 20px;
+}
+.accord-text {
+  font-size: 1.2em;
+  color: rgb(59, 16, 16);
+}
+textarea.accord-inside {
+  font-family: monospace;
+  padding: 10px;
+  font-size: 1.5em;
+}
+h3.accord-inside {
+  color: rgb(182, 127, 136);
+  font-weight: 500;
+}
+p.accord-inside {
+  font-size: 1.2em;
+  text-align: justify;
+}
+button.accord-inside {
+  margin-top: 20px;
+  border-radius: 5px;
+  color: #fff;
+  background: rgb(182, 127, 136);
+  font-size: 1.2em;
+}
+
+button.accord-inside:hover {
+  cursor: pointer;
+  color: #fff;
+  background: pink;
+}
+
+button.add_task {
+  background: pink;
+  font-size: 1.2em;
+  color: rgb(59, 16, 16);
+  text-transform: uppercase;
+  box-shadow: 0 0 20px rgba(1, 1, 1, 0.5);
+  padding: 10px;
+  margin-top: 20px;
+  border-radius: 6px;
+}
+button.add_task:hover {
+  background: rgb(182, 127, 136);
+  color: #fff;
+}
+#plus {
+  font-size: 2em;
+  color: rgb(182, 127, 136);
+  /* font-weight: bold; */
+  text-shadow: 1px 1px 2px #111;
+}

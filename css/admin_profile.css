@@ -33,3 +33,6 @@ header > .sidebar-fixed.position-fixed > .list-group-flush > a.adm-profile {
 .adm-features li > a:hover{
   color: darkblue;
 }
+a#no-realize {
+  color: rgb(202, 145, 211);
+}

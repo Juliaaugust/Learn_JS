@@ -24,84 +24,148 @@
 
   <main class="pt-5 mx-lg-5">
 
+    <div id="accordion" class="mt-5">
+      <div class="card">
+        <div class="card-header" id="headingOne">
+          <h5 class="mb-0">
+            <button class="btn btn-link" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+              <span class="accord-text"><b>Задача 1.</b> Расчет индекса воспроизводимости C<sub>p</sub> на основе заданных значений</span>
+            </button>
+          </h5>
+        </div>
 
-    <div class="row wow fadeIn mt-5">
-      <div class="col-md-6 mb-4">
-        <div class="card">
+        <div id="collapseOne" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
           <div class="card-body">
-            <h3>Уроки</h3>
-            <table class="table table-hover">
-              <thead class="pink lighten-4">
-                <tr>
-                  <th scope="col">Id</th>
-                  <th scope="col">Имя</th>
-                  <th scope="col">Фамилия</th>
-                  <th scope="col">E-mail</th>
-                </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                    <td scope="row">1</td>
-                    <td>Маша</td>
-                    <td>Шорохова</td>
-                    <td>masha@mail.ru</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">2</td>
-                    <td>Петя</td>
-                    <td>Горохов</td>
-                    <td>petya@gmail.com</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">3</td>
-                    <td>Анна</td>
-                    <td>Любимова</td>
-                    <td>anny555@gmail.com</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">4</td>
-                    <td>Олег</td>
-                    <td>Григорьев</td>
-                    <td>grigoriev777@gmail.com</td>
-                  </tr>
-              </tbody>
-            </table>
+            <h3 class="accord-inside">Условие задачи:</h3>
+            <p class="accord-inside">В данной задаче необходимо оценить индекс воспроизводимости Cp по изученной ранее формуле на примере
+              толщины полимерных пленок.</p>
+            <p class="accord-inside">Для этого необходимо создать переменную <b>VGD</b> и записать в нее верхнюю границу допуска, равную
+              в данном случае 255 мкм, а также переменную <b>NGD</b>, которая будет содержать в себе значение нижней границы
+              допуска – 245 мкм (единицы измрения в коде не указываются).</p>
+            <p class="accord-inside">Кроме того, нужно задать переменную <b>sigma</b> – стандартное отклонение, равное 1,48 мкм.</p>
+            <p class="accord-inside">Результат вычислений необходимо записать в переменную <b>Cp</b>, а затем нажать кнопку «проверить».</p>
+            <h3 class="accord-inside">Пример правильного решения:</h3>
+            <textarea class="accord-inside" name="name" rows="4" cols="60" disabled>
+var VGD = 255;
+var NGD = 245;
+var sigma = 1.48;
+var Cp = (VGD - NGD) / (6 * sigma);</textarea>
+            <br>
+            <button class="accord-inside" type="button" name="button">Редактировать задачу</button>
+            <button class="accord-inside" type="button" name="button">Удалить задачу</button>
           </div>
         </div>
       </div>
+      <div class="card">
+        <div class="card-header" id="headingTwo">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+              <span class="accord-text"><b>Задача 2.</b> Расчет средний значений длины и ширины рулона по данным из таблицы</span>
+            </button>
+          </h5>
+        </div>
+        <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div class="card-body">
+            <h3 class="accord-inside">Условие задачи:</h3>
+            <p class="accord-inside">Ниже приведены таблицы, в которых содержатся данные с производственной линии.</p>
+            <p class="accord-inside">Необходимо, обратившись к данным из таблицы, вычислить среднее значение для длины и толщины рулона.</p>
+            <p class="accord-inside">Среднюю толщину пленки по длине рулона запишите в переменную <b>avL</b>, а среднюю толщину по ширине
+              – в переменную <b>avW</b>.</p>
+            <p class="accord-inside">Чтобы обратиться к данным из таблицы, необходимо использовать массив <b>width_arr</b>
+            для получения значений средней толщины рулона по ширине и массив <b>length_arr</b> для получения значений
+            средней толщины рулона по длине.</p>
+            <p class="accord-inside">Для сохранения промежуточных значений расчета – суммы всех значений средней толщины по длине и
+              ширине рулона, используйте переменные <b>sumL</b> и <b>sumW</b> соответственно.</p>
+            <h3 class="accord-inside">Пример правильного решения:</h3>
+            <textarea class="accord-inside" name="name" rows="11" cols="60" disabled>
+var avL, avW;
+var sumL = sumW = 0;
 
-      <div class="col-md-6 mb-4">
-          <div class="card">
-            <div class="card-body">
-                <h3>Задачи</h3>
-              <table class="table table-hover">
-                <thead class="blue lighten-4">
-                  <tr>
-                  <th scope="col">Id</th>
-                  <th scope="col">Имя</th>
-                  <th scope="col">Фамилия</th>
-                  <th scope="col">E-mail</th>
-                </tr>
-              </thead>
-              <tbody>
-                  <tr>
-                    <td scope="row">1</td>
-                    <td>Ирина</td>
-                    <td>Соболева</td>
-                    <td>irka_lala@mail.ru</td>
-                  </tr>
-                  <tr>
-                    <td scope="row">2</td>
-                    <td>Иван</td>
-                    <td>Лебедев</td>
-                    <td>vannyyyy@gmail.com</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
+for (var i = 0; i < length_arr.length; i++) {
+	sumL += parseFloat(length_arr[i]);
+}
+for (var i = 0; i < width_arr.length; i++) {
+	sumW += parseFloat(width_arr[i]);
+}
+avL = sumL / length_arr.length;
+avW = sumW / width_arr.length;
+</textarea>
+            <br>
+            <button class="accord-inside" type="button" name="button">Редактировать задачу</button>
+            <button class="accord-inside" type="button" name="button">Удалить задачу</button>
           </div>
         </div>
-    </div>
+      </div>
+      <div class="card">
+        <div class="card-header" id="headingThree">
+          <h5 class="mb-0">
+            <button class="btn btn-link collapsed" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+              <span class="accord-text"><b>Задача 3.</b> Расчет индексов C<sub>p</sub> и С<sub>pk</sub> по данным из таблицы. Построение графиков зависимости среднего профиля рулона от длины и от ширины полимерной пленки</span>
+            </button>
+          </h5>
+        </div>
+        <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div class="card-body">
+            <h3 class="accord-inside">Условие задачи:</h3>
+            <p class="accord-inside">В этой задаче необходимо рассчитать индексы потенциальной пригодности и подтвержденного качества <b>Cp</b> и <b>Cpk</b>
+              и записать их в соответствующие одноименные переменные.</p>
+            <p class="accord-inside">Будем считать, что средние значения пленки по длине и ширине рулона уже даны, и обратиться к ним можно через
+            переменные <b>avL</b> и <b>avW</b> соответственно.</p>
+            <p class="accord-inside">Стандартное отклонение, равное 1.48 мкм, необходимо записать в переменную <b>sigma</b>.</p>
+            <p class="accord-inside">Номинальная толщина пленки, равная 250 мкм, должна быть записана в переменной <b>nominThick</b>.</p>
+            <p class="accord-inside">В переменную <b>VGD</b> нужно записать верхнюю границу допуска, равную 255 мкм, а в переменную
+               <b>NGD</b> – значение нижней границы допуска, равное 245 мкм.</p>
+            <p class="accord-inside">Для сохранения промежуточного значения расчета – поправки на нецентральность, используйте переменную <b>K</b>.</p>
+
+            <p class="accord-inside">Также необходимо получить графическое отображение профиля по длине и ширине при нажатии кнопку
+              "Построить графики", расположенную сразу под таблицей (доступно только после проверки кода).</p>
+            <p class="accord-inside">Для этого необходимо задать значения данных графика, создав объект <b>traceWidth</b> для ширины и <b>traceLength</b> для длины.
+              В свойстве <b>x</b> каждого из этих объектов должна храниться позиция по ширине или длине (в массиве <b>width_pos_arr</b> или <b>length_pos_arr</b> соответственно),
+              в свойстве <b>y</b> – средняя толщина пленки, распределенная по ширине или длине (в массиве <b>width_arr</b> или <b>length_arr</b> соответственно),
+              а в свойстве <b>type</b> – строка <b>"scatter"</b>, обозначающая тип графика. Указать названия условных обозначений графика можно с помощью
+              свойства <b>name</b>, записав в него какую-то строку, например, "Средняя толщина плёнки".</p>
+            <p class="accord-inside">Также не забудьте указать для графиков заголовки: для этого создайте объект <b>layoutW</b> для заголовка графика распределения толщины пленки по ширине
+              и объект <b>layoutL</b> – для заголовка графика распределения толщины пленки по длине.</p>
+            <p class="accord-inside">В единственном свойстве <b>title</b> каждого из этих объектов должна храниться строка, которая и будет заголовком графика.</p>
+            <h3 class="accord-inside">Пример правильного решения:</h3>
+            <textarea class="accord-inside" name="name" rows="27" cols="60" disabled>
+var nominThick = 250;
+var VGD = 255;
+var NGD = 245;
+var sigma = 1.48;
+
+var K = (Math.abs(nominThick - avL) ) / 0.5 - (VGD - NGD);
+var Cp = (VGD - NGD) / (6 * sigma);
+var Cpk = (1 - K) * Cp;
+
+var traceWidth = {
+	x: width_pos_arr,
+	y: width_arr,
+	name: 'Средняя толщина плёнки',
+	type: "scatter"
+};
+var traceLength = {
+	x: length_pos_arr,
+	y: length_arr,
+	name: 'Средняя толщина плёнки',
+	type: "scatter"
+};
+var layoutW = {
+title:'Средний профиль рулона по ширине'
+};
+var layoutL = {
+title:'Средний профиль рулона по длине'
+};
+</textarea>
+            <br>
+            <button class="accord-inside" type="button" name="button">Редактировать задачу</button>
+            <button class="accord-inside" type="button" name="button">Удалить задачу</button>
+          </div>
+        </div>
+      </div>
+    </div> <!--Accordion-->
+
+    <button class="add_task" type="button" name="button"><span id="plus">+</span> Добавить задачу</button>
   </main>
 
   <!-- SCRIPTS -->
@@ -113,9 +177,6 @@
   <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
   <!-- MDB core JavaScript -->
   <script type="text/javascript" src="../../js/mdb.js"></script>
-  <script>
-    new WOW().init();
-  </script>
   <script type="text/javascript" src="../../js/admin_main.js"></script>
 </body>
 

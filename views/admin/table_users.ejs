@@ -79,14 +79,14 @@
                       <h3>Задачи пользователя</h3>
                         <h5><span class="task">Задача 1:</span> <span class="status status-right">Решено верно</span></h5>
                         <p>Решение:</p>
-                        <textarea name="name" rows="4" cols="60">
+                        <textarea name="name" rows="4" cols="60" readonly>
 var VGD = 255;
 var NGD = 245;
 var sigma = 1.48;
 var Cp = (VGD - NGD) / (6 * sigma);</textarea>
                         <h5><span class="task">Задача 2:</span> <span class="status status-right">Решено верно</span></h5>
                         <p>Решение:</p>
-                        <textarea name="name" rows="8" cols="60">
+                        <textarea name="name" rows="8" cols="60" readonly>
 var avL, avW;
 var sumL = sumW = 0;
 
@@ -139,14 +139,14 @@ avW = sumW / width_arr.length;</textarea>
                       <h3>Задачи пользователя</h3>
                         <h5><span class="task">Задача 1:</span> <span class="status status-right">Решено верно</span></h5>
                         <p>Решение:</p>
-                        <textarea name="name" rows="4" cols="60">
+                        <textarea name="name" rows="4" cols="60" readonly>
 var VGD = 255
 var NGD = 245
 var sigma = 1.48
 var Cp = (VGD-NGD)/(6*sigma)</textarea>
                         <h5><span class="task">Задача 2:</span> <span class="status status-wrong">Решено неверно</span></h5>
                         <p>Решение:</p>
-                        <textarea name="name" rows="8" cols="60">
+                        <textarea name="name" rows="8" cols="60" readonly>
 var avL
 var avW
 var sumL = 0
@@ -166,6 +166,7 @@ avW = sumW / width_arr</textarea>
                   </div>
                 </div>
               </div>
+
               <div class="card">
                 <div class="card-header" id="headingThree">
                   <table>
@@ -185,8 +186,8 @@ avW = sumW / width_arr</textarea>
 
                 </div>
                 <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-                  <div class="card-body">
-                      <div class="mb-4">
+                  <div class="card-body row">
+                      <div class="col-md-6 mb-4">
                           <img src="../../img/avatars/ava_w.jpg" height="200px" alt="">
                           <p>Любимова Анна</p>
                           <p>Администратор БД (Преподаватель)</p>
@@ -196,9 +197,17 @@ avW = sumW / width_arr</textarea>
                           <button type="button" name="button">Снять с должности администратора</button>
                           <button type="button" name="button">Удалить пользователя</button>
                         </div>
+                  <div class="col-md-6 mb-4">
+                    <h3>Задачи пользователя</h3>
+                      <h5><span class="task">Задача 1:</span> <span class="status status-no-answer">Не решено</span></h5>
+
+                      <h5><span class="task">Задача 2:</span> <span class="status status-no-answer">Не решено</span></h5>
+
+                      <h5><span class="task">Задача 3:</span> <span class="status status-no-answer">Не решено</span></h5>
                   </div>
                 </div>
               </div>
+            </div>
 
 
               <div class="card">
@@ -220,8 +229,8 @@ avW = sumW / width_arr</textarea>
 
                 </div>
                 <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
-                  <div class="card-body">
-                      <div class="mb-4">
+                  <div class="card-body row">
+                      <div class="col-md-6 mb-4">
                           <img src="../../img/avatars/ava_m.jpg" height="200px" alt="">
                           <p>Григорьев Олег</p>
                           <p>Администратор БД (Преподаватель)</p>
@@ -230,6 +239,14 @@ avW = sumW / width_arr</textarea>
                           <p>Пароль: olegadmin</p>
                           <button type="button" name="button">Снять с должности администратора</button>
                           <button type="button" name="button">Удалить пользователя</button>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                          <h3>Задачи пользователя</h3>
+                            <h5><span class="task">Задача 1:</span> <span class="status status-no-answer">Не решено</span></h5>
+
+                            <h5><span class="task">Задача 2:</span> <span class="status status-no-answer">Не решено</span></h5>
+
+                            <h5><span class="task">Задача 3:</span> <span class="status status-no-answer">Не решено</span></h5>
                         </div>
                   </div>
                 </div>
